@@ -1,0 +1,66 @@
+
+# ソースディレクトリへcd してから...
+
+mkdir var
+chown :lighttpd var
+chmod g+w var
+
+mkdir var/cache
+chown :lighttpd var/cache
+chmod g+w var/cache
+mkdir var/logs
+chown :lighttpd var/logs
+chmod g+w var/logs
+mkdir var/tmp
+chown :lighttpd var/tmp
+chmod g+w var/tmp
+
+mkdir var/cache/character
+chown :lighttpd var/cache/character
+chmod g+w var/cache/character
+mkdir var/cache/mojavi
+chown :lighttpd var/cache/mojavi
+chmod g+w var/cache/mojavi
+mkdir var/cache/smarty
+chown :lighttpd var/cache/smarty
+chmod g+w var/cache/smarty
+
+mkdir var/tmp/character
+chown :lighttpd var/tmp/character
+chmod g+w var/tmp/character
+mkdir var/tmp/swf
+chown :lighttpd var/tmp/swf
+chmod g+w var/tmp/swf
+
+mkdir htdocs/swf
+chown :lighttpd htdocs/swf
+chmod g+w htdocs/swf
+
+chmod 744 stag_rsync.sh
+
+chmod 744 native_rsync.sh
+chmod 744 native_datasync.sh
+
+chmod 744 geso_rsync.sh
+chmod 744 geso_datasync.sh
+
+chmod 744 gree_rsync.sh
+chmod 744 gree_datasync.sh
+
+chmod 744 mbga_rsync.sh
+chmod 744 mbga_datasync.sh
+
+chmod 744 mixi_rsync.sh
+chmod 744 mixi_datasync.sh
+
+chmod 744 niji_rsync.sh
+chmod 744 niji_datasync.sh
+
+chmod 744 waku_rsync.sh
+chmod 744 waku_datasync.sh
+
+chmod 744 sonnet_backup.sh
+
+
+
+#あとsmartyはSVN管理にない。
