@@ -1,0 +1,529 @@
+@charset "UTF-8";
+
+:root {
+    --sat:env(safe-area-inset-top);
+    --sar:env(safe-area-inset-right);
+    --sab:env(safe-area-inset-bottom);
+    --sal:env(safe-area-inset-left);
+}
+
+/*
+iphone長押しでの画像保存をガード
+*/
+img,div {
+user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+-webkit-user-select:none;
+-khtml-user-select:none;
+-webkit-user-drag: none;
+-khtml-user-drag: none;
+-webkit-touch-callout: none;
+}
+
+/*選択不可*/
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* Internet Explorer */
+-khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+-webkit-user-select: none; /* Chrome, Safari, and Opera */
+-webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+
+/*フォント強調*/
+.colorIntens{
+  color:#ff9030;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  text-shadow: 
+    0.2px 0.2px 0, 
+    0.2px -0.2px 0px,
+    -0.2px 0.2px 0,
+    -0.2px -0.2px 0px,
+    0.2px 0px 0px,
+    0px 0.2px 0px,
+    -0.2px 0px 0px,
+    0px -0.2px 0px;
+  letter-spacing: 1px;
+}
+
+/*フォントノーマル*/
+.iphone .colorNormal{
+  color:#776451;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  text-shadow: 
+    0.2px 0.2px 0, 
+    0.2px -0.2px 0px,
+    -0.2px 0.2px 0,
+    -0.2px -0.2px 0px,
+    0.2px 0px 0px,
+    0px 0.2px 0px,
+    -0.2px 0px 0px,
+    0px -0.2px 0px;
+  letter-spacing: 1px;
+}
+
+.android .colorNormal{
+  color:#776451;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/*フォントダークボタン用*/
+.iphone .colorDark{
+  color:#bca996;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  text-shadow: 
+    0.2px 0.2px 0, 
+    0.2px -0.2px 0px,
+    -0.2px 0.2px 0,
+    -0.2px -0.2px 0px,
+    0.2px 0px 0px,
+    0px 0.2px 0px,
+    -0.2px 0px 0px,
+    0px -0.2px 0px;
+  letter-spacing: 1px;
+}
+
+.android .colorDark{
+  color:#bca996;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/*フォント非活性ボタン用*/
+.iphone .colorDisable{
+  color: #94897f;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  text-shadow: 
+    0.2px 0.2px 0, 
+    0.2px -0.2px 0px,
+    -0.2px 0.2px 0,
+    -0.2px -0.2px 0px,
+    0.2px 0px 0px,
+    0px 0.2px 0px,
+    -0.2px 0px 0px,
+    0px -0.2px 0px;
+  letter-spacing: 1px;
+}
+
+.android .colorDisable{
+  color: #94897f;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/*フォント白*/
+.iphone .colorWhite{
+  color:white;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  text-shadow: 
+    0.2px 0.2px 0, 
+    0.2px -0.2px 0px,
+    -0.2px 0.2px 0,
+    -0.2px -0.2px 0px,
+    0.2px 0px 0px,
+    0px 0.2px 0px,
+    -0.2px 0px 0px,
+    0px -0.2px 0px;
+  letter-spacing: 1px;
+}
+
+.android .colorWhite{
+  color:white;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/*フォント白い青*/
+.iphone .colorLiteBlue{
+  color:#dbf4ff;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  text-shadow: 
+    0.2px 0.2px 0, 
+    0.2px -0.2px 0px,
+    -0.2px 0.2px 0,
+    -0.2px -0.2px 0px,
+    0.2px 0px 0px,
+    0px 0.2px 0px,
+    -0.2px 0px 0px,
+    0px -0.2px 0px;
+  letter-spacing: 1px;
+}
+
+.android .colorLiteBlue{
+  color:#dbf4ff;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/*フォント白い青*/
+.iphone .colorLiteBlue2{
+  color:#b8feff;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  text-shadow: 
+    0.2px 0.2px 0, 
+    0.2px -0.2px 0px,
+    -0.2px 0.2px 0,
+    -0.2px -0.2px 0px,
+    0.2px 0px 0px,
+    0px 0.2px 0px,
+    -0.2px 0px 0px,
+    0px -0.2px 0px;
+  letter-spacing: 1px;
+}
+
+.android .colorLiteBlue2{
+  color:#b8feff;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/*フォント赤*/
+.iphone .colorRed{
+  color:red;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  text-shadow: 
+    0.2px 0.2px 0, 
+    0.2px -0.2px 0px,
+    -0.2px 0.2px 0,
+    -0.2px -0.2px 0px,
+    0.2px 0px 0px,
+    0px 0.2px 0px,
+    -0.2px 0px 0px,
+    0px -0.2px 0px;
+  letter-spacing: 1px;
+}
+
+.android .colorRed{
+  color:red;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/*フォント赤*/
+.iphone .colorLiteRed{
+  color:#ebd4d4;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  text-shadow: 
+    0.2px 0.2px 0, 
+    0.2px -0.2px 0px,
+    -0.2px 0.2px 0,
+    -0.2px -0.2px 0px,
+    0.2px 0px 0px,
+    0px 0.2px 0px,
+    -0.2px 0px 0px,
+    0px -0.2px 0px;
+  letter-spacing: 1px;
+}
+
+.android .colorLiteRed{
+  color:#ebd4d4;
+  line-height: 1em;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/*フォント白っぽい*/
+.iphone .colorNearWhite{
+  color: #ded2c8;
+  line-height: 1em;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-shadow: 
+    0.2px 0.2px 0, 
+    0.2px -0.2px 0px,
+    -0.2px 0.2px 0,
+    -0.2px -0.2px 0px,
+    0.2px 0px 0px,
+    0px 0.2px 0px,
+    -0.2px 0px 0px,
+    0px -0.2px 0px;
+  letter-spacing: 1px;
+}
+
+.android .colorNearWhite{
+  color: #ded2c8;
+  line-height: 1em;
+  font-size: 1.6em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/*フォントエメラルド*/
+.iphone .colorEmerald{
+  color: #38f0ff;
+  line-height: 1em;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-shadow: 
+    0.2px 0.2px 0, 
+    0.2px -0.2px 0px,
+    -0.2px 0.2px 0,
+    -0.2px -0.2px 0px,
+    0.2px 0px 0px,
+    0px 0.2px 0px,
+    -0.2px 0px 0px,
+    0px -0.2px 0px;
+  letter-spacing: 1px;
+}
+
+.android .colorEmerald{
+  color: #38f0ff;
+  line-height: 1em;
+  font-size: 1.6em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/*
+ *---------------------------------------------------------------------------------------------------
+ * ボタンのhover
+ *
+ *---------------------------------------------------------------------------------------------------
+*/
+.hover:hover img{
+	opacity:0.5;
+	-moz-opacity:0.5;
+	filter:alpha(opacity = 50);
+  cursor: hand; cursor:pointer;
+}
+
+/*普通の四角いボタンはこちら*/
+.normal:hover{
+    background-color:#f6dd00;
+}
+
+/*右上と左下が丸いボタンはこちら*/
+.radius:hover{
+    background-color:#f6dd00;
+    border-radius: 0px 12px 0px 12px;
+}
+
+/*右上と左下が丸いボタンはこちら*/
+.radiusH:hover{
+    background-color:#f6dd00;
+    border-radius: 16px 16px 16px 16px;
+}
+
+/*imgをdivで囲むと上下に隙間ができるので・・*/
+img{
+  vertical-align:bottom;
+  vertical-align:top;
+}
+
+
+/*
+ *---------------------------------------------------------------------------------------------------
+ * 画面共通のスクロールバーのCSS
+ *
+ *---------------------------------------------------------------------------------------------------
+*/
+.scrollWrapper {
+  position: absolute;
+  overflow: hidden;
+}
+
+/*
+ *---------------------------------------------------------------------------------------------------
+ * 画面共通のタブのCSS
+ *
+ *---------------------------------------------------------------------------------------------------
+*/
+
+/* 表示領域全体 */
+div.tabbox {
+}
+
+/* タブ部分 */
+div.tabs { 
+    position: absolute; 
+    top: 54px;
+    margin-left: 5px;
+    width: 280px;
+}
+div.tabs div {
+    display: inline; 
+    float: left;
+    text-align: center;
+    height: 22px;
+    line-height: 28px;
+    font-size: 0.9em;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* タブ非選択状態 */
+div.tabs div.tab-element { 
+    color: #dbf4ff; 
+    background-color: #2e689a;
+}
+
+/* タブ選択状態 */
+div.tabs div.selected { 
+    color: #dbf4ff;
+    background-color: #3a1115;
+}
+
+/* タブ中身のボックス */
+div.tab {}
+
+div#tab {
+   background-image: url(/img/tab_bg.png);
+   position: absolute;
+   top: 62px;
+   height: 350px;
+   width: 100%;
+}
+
+/*
+ *---------------------------------------------------------------------------------------------------
+ * 装備のCSS
+ *
+ *---------------------------------------------------------------------------------------------------
+*/
+
+.att1-icon {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+}
+
+.att2-icon {
+  position: absolute;
+  top: 2px;
+  left: 125px;
+}
+
+.att3-icon {
+  position: absolute;
+  top: 0px;
+  left: 254px;
+}
+
+.spd-icon {
+  position: absolute;
+  top: 5px;
+  left: 384px;
+}
+
+.def1-icon {
+  position: absolute;
+  top: 33px;
+  left: 4px;
+}
+
+.def2-icon {
+  position: absolute;
+  top: 33px;
+  left: 128px;
+}
+
+.def3-icon {
+  position: absolute;
+  top: 33px;
+  left: 256px;
+}
+
+.defX-icon {
+  position: absolute;
+  top: 33px;
+  left: 383px;
+}
+
+.att1-text {
+  position: absolute;
+  width: 100px;
+  top: 5px;
+  left: 8px;
+  text-align:right;
+}
+
+.att2-text {
+  position: absolute;
+  width: 100px;
+  top: 5px;
+  left: 135px;
+  text-align:right;
+}
+
+.att3-text {
+  position: absolute;
+  width: 100px;
+  top: 5px;
+  left: 267px;
+  text-align:right;
+}
+
+.spd-text {
+  position: absolute;
+  width: 100px;
+  top: 5px;
+  left: 397px;
+  text-align:right;
+}
+
+.def1-text {
+  position: absolute;
+  width: 100px;
+  top: 37px;
+  left: 8px;
+  text-align:right;
+}
+
+.def2-text {
+  position: absolute;
+  width: 100px;
+  top: 37px;
+  left: 135px;
+  text-align:right;
+}
+
+.def3-text {
+  position: absolute;
+  width: 100px;
+  top: 37px;
+  left: 267px;
+  text-align:right;
+}
+
+.defX-text {
+  position: absolute;
+  width: 100px;
+  top: 37px;
+  left: 397px;
+  text-align:right;
+}
+
+
+

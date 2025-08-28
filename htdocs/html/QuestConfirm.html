@@ -1,0 +1,45 @@
+<div id="content" style="width:726px; height:765px;">
+  <div id="QuestConfirmContents" >
+    <!--ウィンドウ背景-->
+    <div id="img_win" style="position: absolute;"></div>
+
+    <!--ステータス表示-->
+    <div class="colorNormal" style="position: absolute;top: 15px;left: 16px;" ><img src='' id="quest_status_icon" ></div>
+
+    <!--クエスト名-->
+    <div class="colorLiteRed" id="quest_name" style="position: absolute;top: 45px;left: 115px;width: 457px;font-size: 35px;letter-spacing:0px;" ></div>
+
+    <!--推奨レベル-->
+    <div class="colorNormal" id="preferred_level" style="position: absolute;top: 65px;left: 504px;width: 200px;color:#82c5f1;font-size: 1.5em;text-align:center;" ></div>
+
+    <!--テキスト-->
+    <div class="colorLiteRed" id="flavor_text" style="position: absolute;top: 147px;left: 40px;width: 649px;font-size: 26px;line-height: 1.2em;letter-spacing:0px;" ></div>
+
+    <!--フィールド-->
+    <div class="colorNormal" id="quest_type" style="position: absolute;top: 384px;left: 119px;width: 200px;text-align:  right;color: #9D8777;" ></div>
+    <!--消費AP-->
+    <div class="colorNormal" id="consume_pt" style="position: absolute;top: 383px;left: 523px;width: 100px;text-align:  right;color: #e2bcff;font-size: 2em;" ></div>
+
+    <!--ナビセリフ背景-->
+    <div style="position: absolute;top: 519px;left: 80px;width: 339px;" ><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/serifu_win.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/serifu_win.png"|filemtime}'></div>
+
+    <!--ナビキャラ-->
+    <div style="position: absolute;left: 31px;top: 510px;"><img id="navi_conf" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/navi.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/navi.png"|filemtime}'></div>
+
+    <!--ナビセリフ-->
+    <div class="colorNormal" id="navi_serif_conf" style="position: absolute;top: 555px;left: 193px;width: 339px;" ></div>
+
+    <!--OKボタン-->
+    <div id="quest-confirm-ok" style="position:absolute;left: 197px;top: 669px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">OK</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+    <!--キャンセルボタン-->
+    <div id="quest-confirm-cancel" style="position:absolute;left: 378px;top: 669px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;color:#BAB0AA;">CANCEL</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74_dark.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74_dark.png"|filemtime}'>
+    </div>
+
+  </div>
+</div>

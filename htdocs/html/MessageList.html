@@ -1,0 +1,61 @@
+<div id="content" style="width:724px;">
+  <div id="MessageListContents" >
+
+    <!--ウィンドウ背景-->
+    <div id="bg_image" style="position: absolute;top: 190px;left: -9px;"></div>
+
+    <!--タブ背景-->
+    <div style="position: absolute;width: 743px;height: 150px;left: -12px;top: 192px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/msg_tabwin.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/msg_tabwin.png"|filemtime}'></div>
+
+    <div class="scrollWrapper" style="position: absolute;margin-left: 14px;top: 275px;width: 723px;height: 687px;">
+      <div id="message-list" style="position: absolute;">
+      </div>
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。装備用 -->
+    <div id="message-template" key="root" style="position: relative;float: left;margin-left: 4px;margin-top: 33px;margin-bottom: 0px;width: 708px;height: 214px;display:none;">
+
+      <!--ウィンドウ背景-->
+      <div style="position: absolute;top: -30px;left: 5px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/msg_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/msg_panel.png"|filemtime}'></div>
+
+      <div style="position: absolute;width: 0px;height: 0px;top: 0px;left: 15px;" ><img key="image" src=""></div>
+      <div class="colorwhite" style="position: absolute;top: 27px;left: 485px;width: 200px;" key="create_at"></div>
+
+      <!--ユーザーボタン-->
+      <div style="position: absolute;top: -2px;left: 206px;" key="user_btn">
+        <div class="colorNormal" style="position: absolute; width:261px; height:66px; text-align: center;line-height: 66px;" key="comanion_name"></div>
+        <img src="{$smarty.const.APP_WEB_ROOT}img/parts/sp/msg_namepanel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/msg_namepanel.png"|filemtime}">
+      </div>
+
+      <!--吹き出し-->
+      <div style="position: absolute;top: 60px;left: 171px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/msg_balloon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/msg_balloon.png"|filemtime}'></div>
+      <!--メッセージ-->
+      <div class="colorNormal" style="position: absolute;top: 90px;left: 235px;width: 417px;" key="body"></div>
+    </div>
+
+    <!-- 空の場合のHTML。クローンされてリストの中に挿入される。 -->
+    <div id="no-entry" class="colorWhite" style="width: 693px;text-align:center; line-height: 20; display:none">
+      メッセージはありません
+    </div>
+
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;top: 273px;left: -2px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_window_up.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_window_up.png"|filemtime}' style="width:724px;height:10px;"></div>
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;top: 967px;left: -2px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_window_down.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_window_down.png"|filemtime}' style="width:724px;height:10px;"></div>
+
+    <!--タブ-->
+    <div style="position: absolute;width: 750px;height: 100px;left: -7px;top: 203px;">
+      <!--タブ-->
+      <div style="position: absolute;left: 5px;top: 11px;">
+        <div style="display: inline;float:  left;width: 183px;height: 70px;" onclick="MessageListDisplay.onChangeTab('receive')"><img id="tab-receive" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/msg_tab_receive_selected.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/msg_tab_receive_selected.png"|filemtime}' style="width:183px;height:70px;display:none;"></div>
+        <div style="display: inline;float:  left;width: 183px;height: 70px;" onclick="MessageListDisplay.onChangeTab('send')"><img id="tab-send" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/msg_tab_send_selected.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/msg_tab_send_selected.png"|filemtime}' style="width:183px;height:70px;display:none;"></div>
+      </div>
+    </div>
+
+    <!--OKボタン-->
+    <div id="dialogue-close" style="position:absolute;left: 284px;top: 983px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">閉じる</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+</div>

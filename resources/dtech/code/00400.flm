@@ -1,0 +1,103 @@
+//
+// value2 で指定したターンの終了時、固定で value1 で指定した量のスター追加を行う必殺技。
+// value2 には -2(ランダム) も指定できる。
+
+    frame 0
+      push 'NAME'
+      push '[:dtech_name:]'
+      setVariable
+      push 'DESC'
+      push '[:dtech_desc:]'
+      setVariable
+      push 'STAR'
+      push '[:value1:]'
+      setVariable
+      push 'TURN'
+      push '[:value2:]'
+      setVariable
+      push 'init'
+      callFrame
+      stop
+    end // of frame 0
+
+    frame 3
+      push 'TURN'
+      getVariable
+      push '-2'
+      oldEquals
+      branchIfTrue label1
+      branch label2
+     label1:
+      push 'TURN'
+      push '/:timeupTurns'
+      getVariable
+      random
+      setVariable
+      branch label2
+     label2:
+    end // of frame 3
+
+    frame 5
+      push '../:notify'
+      getVariable
+      push 'turnend'
+      stringEq
+      push '../:notify'
+      getVariable
+      push 'turnend'
+      stringEq
+      not
+      branchIfTrue label1
+      pop
+      push '/main/info/turn/:value'
+      getVariable
+      push 'TURN'
+      getVariable
+      oldEquals
+     label1:
+      not
+      branchIfTrue label2
+      push 'effect'
+      push '1'
+      setVariable
+     label2:
+    end // of frame 5
+
+    frame 7
+      push 'i'
+      push '0'
+      setVariable
+     label1:
+      push 'i'
+      getVariable
+      push 'STAR'
+      getVariable
+      oldLessThan
+      not
+      branchIfTrue label2
+      push '/main/mainPhase/starStore'
+      push 'side'
+      getVariable
+      concat
+      setTargetExpr
+        push 'pushType'
+        push '3'
+        random
+        push '1'
+        oldAdd
+        setVariable
+        push 'num'
+        push '1'
+        setVariable
+        push 'push'
+        callFrame
+      end
+      push 'i'
+      push 'i'
+      getVariable
+      push '1'
+      oldAdd
+      setVariable
+      branch label1
+     label2:
+    end // of frame 7

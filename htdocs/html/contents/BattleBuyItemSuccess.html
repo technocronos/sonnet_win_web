@@ -1,0 +1,105 @@
+<div id="content" style="width:750px;">
+  <div id="BattleBuyItemSuccess" >
+
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;top: 0px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/preload/circle_bg.png'></div>
+
+
+      <!--タイトル-->
+      <div style="position: absolute;top: 50px;left: 200px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/item_buy_title.png'></div>
+      <!--ウィンドウパネル-->
+      <div style="position: absolute;top: 150px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_confirm_win.png'></div>
+
+
+
+    <!--所持数-->
+    <div style="position: absolute;top: 152px;left: -254px;">
+      <div style="position: absolute;top: 0px;left: 280px;">
+          <div style="position: absolute;top: 0px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/count_panel.png'></div>
+          <div class="colorLiteBlue" style="position: absolute;top: 18px;left: 60px;width:100px; text-align:right;">{if $uitem}{$uitem.num}{else}0{/if}</div>
+      </div>
+    </div>
+
+
+      <div style="position: absolute;top: 155px;left: 425px;">
+          <!--所持コインウィンドウ背景-->
+          <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_magna_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_magna_base.png"|filemtime}'></div>
+
+          <!--通貨アイコン-->
+          <div style="position: absolute;top: 17px;left: 28px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/coin_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/coin_icon.png"|filemtime}'></div>
+          <div id="has_currency_text"  style="position: absolute;top: 12px;left: 58px;width:50px">所持<br>コイン</div>
+
+          <!--所持コイン-->
+          <div class="colorNormal" id="CoinCount" style="position: absolute;top: 16px;left: 103px;width: 100px;color:  #ebd4d4;text-align: right;" ></div>
+          <div id="currency2" class="colorNormal" style="position: absolute;top: 16px;left: 206px;width: 57px;color:  #ebd4d4;" >コイン</div>
+      </div>
+
+      <div class="colorLiteBlue" style="position:absolute;left: 30px;top: 230px;font-size:2em;">{$item.item_name}</div>
+
+      <!--通貨アイコン-->
+      <div style="position: absolute;top: 240px;left: 455px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/coin_icon.png'></div>
+      <div style="position: absolute;top: 245px;left: 487px;width:50px;">単価</div>
+
+      <!--単価-->
+      <div class="colorNormal" id="price" style="position: absolute;top: 240px;left: 527px;width: 100px;color:  #ebd4d4;text-align:  right;" >{$price}</div>
+      <div class="colorNormal" id="currency" style="position: absolute;top: 240px;left: 632px;width: 300px;color:  #ebd4d4;" >コイン</div>
+
+      <div style="position:absolute;left: 0px;top: 152px;">
+        <!--アイテム背景-->
+        <div style="position: absolute;top: 165px;left: 39px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/item_image_back.png'></div>
+        <!--アイテムアイコン-->
+        <div style="position: absolute;top: 188px;left: 72px;"><img id="item_icon" style="width:90px;" src=''></div>
+
+        <!--↑ボタン-->
+        <div style="position:absolute;left: 317px;top: 152px;"><img id="btn_up" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/more_btn_up.png'></div>
+        <!--↓ボタン-->
+        <div style="position:absolute;left: 317px;top: 264px;"><img id="btn_down" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/more_btn_down_disable.png'></div>
+
+        <!--購入数-->
+        <div class="colorRed" style="position: absolute;top: 228px;left: 273px;width: 100px;text-align:right;font-size: 1.8em;" id="buy_count">1</div>
+
+        <!--合計値段-->
+        <div class="colorNormal" style="position: absolute;top: 226px;left: 531px;width: 100px;text-align:right;font-size: 1.8em;color: #ebd4d4;" id="total_price">10000</div>
+      </div>
+
+      <div class="colorLiteBlue" style="position: absolute;top: 500px;left: 25px;width:679px;font-size: 2em;">{include file='include/itemEffect.tpl' item=`$item`}</div>
+
+
+    <div style="position: absolute;left: 57px;top: 670px;">
+      <!--ナビキャラセリフ-->
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/serifu_win.png'></div>
+      <!--セリフ-->
+      <div class="colorNormal" id="message_explain" style="position:absolute;top: 18px;left: 130px;width: 450px;">
+          {* 回復アイテム持っていない場合 *}
+          <span class="colorIntens">{$item.item_name}</span>買うんか?買っとけ買っとけ!安いぞ!
+      </div>
+      <!--ナビキャラ-->
+      <div style="position: absolute;left: -40px;top: -40px;"><img id="navi" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/navi2.png'></div>
+    </div>
+
+
+        <!--OKボタン-->
+        <div style="position:absolute;left: 100px;top: 825px;">
+              <div id="buy_button" style="position:absolute;left: 0px;top: 0px;">
+                <div class="colorNormal" style="position: absolute;width: 254px;height: 66px;text-align: center;line-height: 66px;">買う</div>
+                <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_254_66.png'>
+              </div>
+        </div>
+
+
+    <!--閉じるボタン-->
+      <div id="btn_close" style="position:absolute;left: 402px;top: 825px;">
+          <div class="colorNormal" style="position: absolute;width: 254px;height: 66px;text-align: center;line-height: 66px;">戻る</div>
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_254_66.png'>
+      </div>
+
+    <!--コインボタン-->
+    <div style="position: absolute;left: 513px;top: 948px;" id="btn_coin_area">
+      <div style="position: absolute;left: 0px;top: 0px;" id="btn_coin">
+        <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;"><img style="margin-top: 24px;" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/coin_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/coin_icon.png"|filemtime}'>コイン購入</div>
+        <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+      </div>
+    </div>
+
+  </div>
+</div>

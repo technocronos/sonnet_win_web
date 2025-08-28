@@ -1,0 +1,116 @@
+<div id="content" style="width:724px;height: 1000px;">
+  <div id="RivalListContents" >
+
+    <div style="position: absolute;top: 119px">
+        <!--ウィンドウ背景-->
+        <div style="position: absolute;top: 0px;left: -11px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/user_battle_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_battle_window.png"|filemtime}'></div>
+
+        <!--スクロール領域-->
+        <div class="scrollWrapper" style="position: absolute;margin-left: 5px;top: 203px;width: 723px;height: 550px;">
+          <div id="rivallist-list" style="position: absolute;">
+          </div>
+        </div>
+
+        <!--ウィンドウ背景-->
+        <div style="position: absolute;top: 198px;left: 5px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_window_up.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_window_up.png"|filemtime}' style="width:703px;height:10px;"></div>
+
+        <!--更新ボタン-->
+        <div id="btn_update" style="position:absolute;left: 246px;top: 761px;">
+          <div class="colorNormal" style="position: absolute;width: 254px;height: 66px;text-align: center;line-height: 66px;">リスト更新</div>
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_254_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_254_66.png"|filemtime}'>
+        </div>
+
+    </div>
+
+    <!-- bannar -->
+    <div style="position: absolute;left: 0px;top: 48px;    text-align: center;" id="event_banner"><img id="event_banner_img" src='' style="width: 80%;"></div>
+
+    <!--タイトル-->
+    <div style="position: absolute;top: 235px;width: 100%;text-align: center;">
+      <!--タイトル背景-->
+      <div style="position: absolute;width: 100%;text-align: center;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/help_detail_title.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/help_detail_title.png"|filemtime}'></div>
+      <!--タイトル-->
+      <div class="colorWhite" style="position: absolute;top: 37px;text-align:center;width: 100%;">対戦相手一覧</div>
+      <div style="position: absolute;left: 609px;top: 15px;" id="grade_list_btn"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_gradelist.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_gradelist.png"|filemtime}'></div>
+
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。 -->
+    <div id="rivallist-template" key="root" style="position: relative;float:left; margin-left: 4px;margin-top: 13px;margin-bottom: 0px;width: 690px;height: 246px;display:none;">
+      <div id="item_template">
+        <!--ウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/user_battle_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_battle_panel.png"|filemtime}'></div>
+
+        <!--ユーザー名-->
+        <div class="colorNearWhite" style="position: absolute;top: 15px;left: 30px;width: 400px;" key="user_name" ></div>
+        <!--ユーザーアイコン-->
+        <div style="position:absolute;left: 28px;top: 210px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shadowx3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shadowx3.png"|filemtime}'></div>
+        <div style="position:absolute;left: 13px;top: 28px;"><img src='' key="icon" style="width:180px;"></div>
+
+        <!--仲間数-->
+        <div class="colorNearWhite" style="position: absolute;top: 15px;left: 575px;width: 50px;text-align:  right;" key="member" ></div>
+
+        <!--アバター名-->
+        <div class="colorNormal" style="position: absolute;top: 63px;left: 178px;width: 300px;" key="player_name" ></div>
+
+        <!--レベル-->
+        <div class="colorNormal" style="position: absolute;top: 102px;left: 221px;width: 50px;text-align:  right;" key="level" ></div>
+
+        <!--階級-->
+        <div class="colorNormal" style="position: absolute;top: 102px;left: 317px;width: 300px;" key="grade" ></div>
+
+        <!--HPゲージ-->
+        <div style="position: absolute;left: 174px;top: 149px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/HP_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/HP_icon.png"|filemtime}'></div>
+        <!--HPゲージ本体ー-->
+        <div key="hp_gauge" style="position: absolute;left: 213px;top: 146px;">
+          <div style="position: absolute;left: 0px;top: -4px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_bg.png"|filemtime}'></div>
+          <div style="position: absolute;left: 7px;top: 0px;width:300px;">
+            <div style="position: relative;float:left;padding:  0px;margin:  0px;"><img key="hp_gauge_bar" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_gauge_bar.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_gauge_bar.png"|filemtime}' style="width: 277px;height: 28px;"></div>
+            <div style="position: relative;float:left;padding:  0px;margin:  0px;"><img key="hp_gauge_bar_top" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_gauge_bar_top.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_gauge_bar_top.png"|filemtime}' style="width: 14px;height: 28px;"></div>
+          </div>
+          <div style="position: absolute;left: 16px;top: 5px;color:#97ffa0;font-size: 1.2em;">HP</div>
+          <div style="position: absolute;left: 120px;top: 5px;color:#97ffa0;font-size: 1.2em;" key="hp_text">1000/1000</div>
+          <div style="position: absolute;left: 0px;top: -4px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_overrap.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_overrap.png"|filemtime}'></div>
+        </div>
+
+        <!--対戦ボタン-->
+        <div style="position:absolute;left: 521px;top: 65px;" key="battle_button">
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_userbattle.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_userbattle.png"|filemtime}'>
+        </div>
+
+        <!--武器ステータス-->
+        <div style="position: absolute;top: 186px;left: 161px;">
+            <!--武器ステータス背景-->
+            <div><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_status_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_status_bg.png"|filemtime}'></div>
+            <!--武器ステータスアイコン-->
+            <div class="att1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att1.png"|filemtime}'></div>
+            <div class="att2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att2.png"|filemtime}'></div>
+            <div class="att3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att3.png"|filemtime}'></div>
+            <div class="spd-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_speed.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_speed.png"|filemtime}'></div>
+
+            <div class="def1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def1.png"|filemtime}'></div>
+            <div class="def2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def2.png"|filemtime}'></div>
+            <div class="def3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def3.png"|filemtime}'></div>
+            <div class="defX-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_defX.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_defX.png"|filemtime}'></div>
+
+            <div class="colorNearWhite att1-text" key="att1"></div>
+            <div class="colorNearWhite att2-text" key="att2"></div>
+            <div class="colorNearWhite att3-text" key="att3"></div>
+            <div class="colorNearWhite spd-text"  key="spd"></div>
+
+            <div class="colorNearWhite def1-text" key="def1"></div>
+            <div class="colorNearWhite def2-text" key="def2"></div>
+            <div class="colorNearWhite def3-text" key="def3"></div>
+            <div class="colorNearWhite defX-text" key="defX"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 空の場合のHTML。クローンされてリストの中に挿入される。 -->
+    <div id="no-entry" class="colorNormal" style="width: 693px;text-align:center; line-height: 20; display:none">
+      持っているアイテムはありません
+    </div>
+
+
+  </div>
+</div>

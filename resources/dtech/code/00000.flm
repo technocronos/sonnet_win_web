@@ -1,0 +1,16 @@
+//
+// 何も起きない、カラの必殺技コード
+
+
+    frame 0
+      stop
+    end // of frame 0
+
+    frame 3
+    end // of frame 3
+
+    frame 5
+    end // of frame 5
+
+    frame 7
+    end // of frame 7

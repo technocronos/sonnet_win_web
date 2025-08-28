@@ -1,0 +1,79 @@
+<div id="content">
+  <div id="IndexContents">
+    <div id="titlelogo" style="position: absolute;width:100%;"></div>
+    <div style=" position: absolute;top: 0;left: 0;right: 0;bottom: 0;display: flex;flex-direction: column;">
+        <div style="flex:3;"></div>
+
+        {if $session_expire == true}
+              <div style="flex:1;text-align: center;">
+                  <div style="display: inline-block;background-color:white; color:black;text-align: center; margin:4px;width:90%;font-size: 4vw;">
+                      セッションが切れました。</br>お手数ですが一回アプリを再起動してください。</br></br>
+                  </div>
+              </div>
+        {elseif $is_newest_version == false}
+              <div style="flex:1;text-align: center;">
+                  <div style="display: inline-block;background-color:white; color:black;text-align: center; margin:4px;width:90%;font-size: 4vw;">
+                      最新のアップデートがあります。</br>ストアでダウンロードしてください。</br></br>
+                      {if $carrier == "android"}
+                      <div style="margin: 20px; text-align: center;">
+                      注：AndroidはストアにはWEB版しか遷移できません。お手数ですがストアからDLをお求めのお客様はストアで検索の上、アップデートしてください。<br>
+                      なお、アップデートにより次回からは直接遷移が出来るようになります<br>
+                      {/if}
+                      {if $carrier == "iphone"}
+                          <div id="btn_ios_store"><img src="{$smarty.const.APP_WEB_ROOT}img/parts/appstore.png?{"`$smarty.const.MO_HTDOCS`/img/parts/appstore.png"|filemtime}" style="width:100%"></a>
+                      {else}
+                          <div id="btn_android_store"><img src="{$smarty.const.APP_WEB_ROOT}img/parts/googleplay.png?{"`$smarty.const.MO_HTDOCS`/img/parts/googleplay.png"|filemtime}" style="width:100%"></a>
+                      {/if}
+                  </div>
+              </div>
+
+        {elseif $smarty.const.SOUND_TEST == true}
+
+              <div id="btn_sound" style="position: absolute;top: 874px;left: 218px;">
+                  SE
+              </div>
+
+              <div id="btn_bgmstart" style="position: absolute;top: 1074px;left: 218px;">
+                BGM START
+              </div>
+
+              <div id="btn_bgmstop" style="position: absolute;top: 1274px;left: 218px;">
+                BGM STOP
+              </div>
+
+        {elseif $smarty.const.RELEASE_DATE|strtotime < $smarty.now || $testaccess}
+      <!--
+              <div style="position: absolute;top: 750px;left: 0px;">
+                  <img src="{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_start_effect.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_start_effect.png"|filemtime}">
+              </div>
+      -->
+
+              <div style="flex:1;text-align: center;">
+                <div id="btn_start" style="">
+                    <img src="{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_start_2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_start_2.png"|filemtime}" style="width:50%">
+                </div>
+              </div>
+
+        {else}
+              <div style="flex:1;text-align: center;">
+                <div style="background-color:white;">
+                  <span style="color:black;font-size: 4vw;">ダウンロードいただきありがとうございます。オープンは{$smarty.const.RELEASE_DATE}になります。もう少々お待ち下さい。</span>
+                </div>
+              </div>
+        {/if}
+
+    </div>
+
+  </div>
+
+<!--
+        <div style="position:absolute;top: 1200px;left: 20px;">
+            <a href="https://rua.jp/tw/sow_games" target="_blank"><img src="{$smarty.const.APP_WEB_ROOT}img/parts/sp/twitter.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/twitter.png"|filemtime}" style="width: 150px;"></a>
+        </div>
+-->
+</div>
+
+<!--ローディング-->
+<div id="loading" style="position: absolute;top: 0px;width:100%; height: 100%;background-color:#000;z-index:1;">
+  {include file='parts/mini_loading.tpl'}
+</div>

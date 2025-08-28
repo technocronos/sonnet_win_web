@@ -1,0 +1,92 @@
+<div id="content" style="width:750px;">
+  <div id="QuestListContents" >
+    <!--閉じる-->
+    <div id="quest_close" style="position: absolute;top: calc(env(safe-area-inset-top));left: 69%;">
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/close_list_btn.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/close_list_btn.png"|filemtime}'>
+    </div>
+
+<div id="questlist_middle" style="position:relative">
+    <!--タイトル-->
+    <div id="quest_caption" style="position: absolute;top: 0px;left: 34px;display:none;">
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hr_title.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hr_title.png"|filemtime}'>
+      <span class="colorNearWhite" id="placename" style="position: absolute;top: 45px;left: 0px;font-size: 2em;width: 100%;text-align: center;"></span>
+    </div>
+
+    <!--フリックで閉じる矢印-->
+    <div style="position: absolute;left: 131px;z-index:1;display:none;" id="swipe_div" >
+      <img id="swipe_img" style="width:400px" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/swipe.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/swipe.png"|filemtime}'>
+    </div>
+
+    <!--クエストリスト-->
+    <div id="quest-list" style="position: absolute;left: 0px;width: 100%;">
+    </div>
+
+
+    <!--タイトル-->
+    <div id="special_quest_caption" style="position: absolute;top: 28vh;left: 34px;display:none;">
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hr_title.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hr_title.png"|filemtime}'>
+      <span class="colorNearWhite" style="position: absolute;top: 45px;left: 0px;font-size: 2em;width: 100%;text-align: center;">特別クエスト</span>
+    </div>
+
+    <!--イベントバナー-->
+    <div id="event_bannar_panel" style="position: absolute;width: 100%;height: 205px;display:none;">
+      <div style="position: absolute;left: 53px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/home_banner.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/home_banner.png"|filemtime}'></div>
+      <div style="position: absolute;left: 80px;top: 52px;"><img src='' id="event_banner" style="width: 582px;"></div>
+      <div class="colorEmerald" style="position: absolute;left: 80px;top: 9px;width: 287px;font-size: 1.6em;" id="event_banner_explain"></div>
+    </div>
+
+    <!--バナー-->
+    <div id="week_bannar_panel" style="position: absolute;width: 100%;height: 205px;display:none;">
+      <div style="position: absolute;left: 53px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/home_banner.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/home_banner.png"|filemtime}'></div>
+      <div style="position: absolute;left: 80px;top: 52px;"><img src='' id="week_banner"  style="width: 582px;"></div>
+      <div class="colorEmerald" style="position: absolute;left: 80px;top: 9px;width: 400px;font-size: 1.6em;" id="week_banner_explain"></div>
+    </div>
+
+</div>
+
+    <!--ナビ-->
+    <div style="position: absolute;left: -50px;" id="navi_panel">
+        <canvas id="navi_sm_quest" style="position:absolute;"></canvas>
+    </div>
+
+
+    <!--実行中パネル-->
+    <div id="sally_quest_panel" style="position:absolute;left: 72px;top: 668px;display:none;">
+      <!--背景パネル-->
+      <div style="position: absolute;left: 0px;top: 0px;" key="panel"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/in_quest_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/in_quest_panel.png"|filemtime}'></div>
+
+      <div class="colorWhite" id="sally_quest_name" style="position: absolute;width: 227px;height:0px;left: 48px;top: 55px;color:#D0BFB1"></div>
+
+      <!--実行ボタン-->
+      <div id="quest_do" style="position:absolute;left: 291px;top: 50px;">
+        <div class="colorNormal" style="position: absolute;width:132px;height:70px;text-align: center;line-height: 70px;">実行</div>
+        <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_132_70.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_132_70.png"|filemtime}'>
+      </div>
+
+      <!--ギブアップボタン-->
+      <div id="quest_giveup" style="position:absolute;left: 438px;top: 50px;">
+        <div class="colorNormal" style="position: absolute;width:132px;height:70px;text-align: center;line-height: 70px;">ギブアップ</div>
+        <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_132_70.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_132_70.png"|filemtime}'>
+      </div>
+    </div>
+
+
+      <!--テンプレート-->
+      <div id="quest-list-template" key="root" style="position: relative;float:left; margin-left: 41px;margin-top: 0px;margin-bottom: 10px;width: 684px;height: 95px;display:none;">
+        <!--背景パネル-->
+        <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/quest_list_panel_normal.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/quest_list_panel_normal.png"|filemtime}' key="panel"></div>
+
+        <div class="colorNormal" style="position:absolute;width:  400px;left: 105px;top: 30px;font-size: 2em;"  key="name">マルティーニの塔</div>
+
+        <!--状態ボタン-->
+        <div style="position:absolute;left: 0px;top: 0px;"><img src='' key="icon"></div>
+
+        <!--GOボタン-->
+        <div style="position:absolute;left: 501px;top: 11px;" key="go">
+          <div class="colorNormal" style="position: absolute; width:174px; height:74px; text-align: center;line-height: 74px;">GO!</div>
+          <img src="{$smarty.const.APP_WEB_ROOT}/img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}">
+        </div>
+      </div>
+
+  </div>
+</div>

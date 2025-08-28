@@ -1,0 +1,89 @@
+<div id="content" style="width:750px;height: 1000px;">
+  <div id="GachaDetailContents" >
+
+    <!--ナビ-->
+    <div style="position: absolute;left: 57px;top: 59px;">
+      <!--ナビキャラセリフ-->
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/serifu_win.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/serifu_win.png"|filemtime}'></div>
+      <!--セリフ-->
+      <div class="colorNormal" id="navi_serif" style="position:absolute;left: 134px;top: 23px;width: 485px;"></div>
+      <!--ナビキャラ-->
+      <div style="position: absolute;left: -3px;top: -14px;"><img id="navi" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/navi2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/navi2.png"|filemtime}'></div>
+    </div>
+
+    <!--サマリ-->
+    <div style="position: absolute;left: 35px;top: 152px;">
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/gacha_summary.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/gacha_summary.png"|filemtime}'></div>
+      <div class="colorLiteBlue2" style="position: absolute;left: 175px;top: 41px;width:  300px;text-align:  center;" id="summary"></div>
+    </div>
+
+    <!--所持コイン-->
+    <div id="coin_panel" style="position: absolute;left: 32px;top: 236px;display:none;">
+        <!--所持コインウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_magna_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_magna_base.png"|filemtime}'></div>
+        <!--通貨アイコン-->
+        <div style="position: absolute;top: 17px;left: 28px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/coin_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/coin_icon.png"|filemtime}'></div>
+        <div id="has_currency_text"  style="position: absolute;top: 12px;left: 58px;width:50px">所持<br>コイン</div>
+
+        <!--所持コイン-->
+        <div class="colorNormal" id="CoinCount" style="position: absolute;top: 16px;left: 103px;width: 100px;color:  #ebd4d4;text-align: right;" >100</div>
+        <div class="colorNormal" style="position: absolute;top: 16px;left: 206px;width: 57px;color:  #ebd4d4;" >コイン</div>
+    </div>
+
+    <!--ガチャ券-->
+    <div id="ticket_panel" style="position: absolute;left: 503px;top: 225px;display:none;">
+      <div style="position: absolute;left: 31px;top: 16px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/gacha_ticket_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/gacha_ticket_panel.png"|filemtime}'></div>
+      <div class="colorLiteBlue2" style="position: absolute;left: 158px;top: 34px;width: 30px;text-align:center;font-size: 1.2em;" id="ticketCount"></div>
+    </div>
+
+    <!--メインビジュアル-->
+    <div style="position: absolute;left: 46px;top: 333px;">
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='' style="width: 650px;" id="gacha_image"></div>
+
+      <!--詳細ボタン-->
+      <div id="btn_lineup" style="position:absolute;left: 458px;top: 300px;">
+        <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">詳細</div>
+        <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+      </div>
+    </div>
+
+    <!--ボタン-->
+    <div style="position: absolute;left: 30px;top: 737px;" id="btn_no_free">
+      <div style="position: absolute;left: 0px;top: 0px;" id="gacha_1">
+        <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/gacha_1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/gacha_1.png"|filemtime}'></div>
+        <div style="position: absolute;left: 32px;top: 21px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/coin_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/coin_icon.png"|filemtime}' id="currency_1"></div>
+        <div class="colorRed" style="position: absolute;left: -25px;top: 19px;width:  150px;text-align: right;" id="price_1"></div>
+        <div class="colorNormal" style="position: absolute;left: 23px;top: 21px;width:  150px;text-align: right;" id="currencytxt_1"></div>
+      </div>
+      <div style="position: absolute;left: 240px;top: 0px;" id="gacha_11">
+        <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/gacha_11.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/gacha_11.png"|filemtime}'></div>
+        <div style="position: absolute;left: 32px;top: 21px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/coin_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/coin_icon.png"|filemtime}' id="currency_11"></div>
+        <div class="colorRed" style="position: absolute;left: -25px;top: 19px;width:  150px;text-align: right;" id="price_11"></div>
+        <div class="colorNormal" style="position: absolute;left: 23px;top: 21px;width:  150px;text-align: right;" id="currencytxt_11"></div>
+      </div>
+      <div style="position: absolute;left: 480px;top: 0px;display:none;" id="gacha_ticket">
+        <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/gacha_ticket_btn_s.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/gacha_ticket_btn_s.png"|filemtime}' id="ticket_btn_image"></div>
+        <div class="colorRed" style="position: absolute;left: -11px;top: 24px;width:  150px;text-align: right;font-size: 1.5em;" id="price_ticket"></div>
+      </div>
+    </div>
+
+    <div style="position: absolute;left: 262px;top: 737px;" id="btn_free">
+        <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_gacha_free.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_gacha_free.png"|filemtime}'></div>
+    </div>
+
+    <!--戻るボタン-->
+    <div id="btn_back" style="position:absolute;left: 31px;top: 867px;">
+      <div class="colorNormal" style="position: absolute;width:150px;height:66px;text-align: center;line-height: 66px;">＜＜戻る</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_150_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_150_66.png"|filemtime}'>
+    </div>
+
+    <!--コイン購入ボタン-->
+    <div style="position: absolute;left: 549px;top: 867px;" id="btn_coin_area">
+      <div style="position: absolute;left: 0px;top: 0px;display:none;" id="btn_coin">
+        <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;"><img style="margin-top: 24px;" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/coin_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/coin_icon.png"|filemtime}'>コイン購入</div>
+        <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div id="content" style="width:750px;">
+  <div id="BitcoinListContents"  style="position: absolute;">
+
+    <!--ウィンドウ背景-->
+    <div id="bg_image_list" style="position: absolute;"></div>
+
+
+  <div id="bitcoinlistdiv" style="position: absolute;width:750px;height:1100px;">
+    <div style="position: absolute;top: 100px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/help_detail_balloon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/help_detail_balloon.png"|filemtime}'></div>
+
+    <!--タイトル背景-->
+    <div style="position: absolute;top: 0px;left: 25px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/help_detail_title.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/help_detail_title.png"|filemtime}'></div>
+    <!--アイコン-->
+    <div style="position: absolute;top: 21px;left: 109px;"><img style="width: 50px;" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/bitcoin-icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/bitcoin-icon.png"|filemtime}'></div>
+    <!--アイコン-->
+    <div style="position: absolute;top: 23px;left: 565px;"><img style="width: 50px;" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/bitcoin-icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/bitcoin-icon.png"|filemtime}'></div>
+
+    <!--タイトル-->
+    <div class="colorWhite" style="position: absolute;margin-left: 220px;top: 37px;text-align:  center;width:  314px;">出金ログ</div>
+
+    <div class="scrollWrapper" style="position: absolute;margin-left: 18px;top: 150px;width: 675px;height: 720px;">
+        <div id="bitcoin-list" style="position: absolute;"></div>
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。 -->
+    <div id="bitcoin-list-template" key="root" style="position: relative;float: left;margin-top: 10px;margin-bottom: 16px;width: 700px;height: 188px; display:none;">
+        <!--ウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/contents_frame.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/contents_frame.png"|filemtime}' style="height: 188px;width: 661px;"></div>
+
+        <div class="colorNormal" style="position: absolute;top: 15px;left: 24px;" >理由：<span key="reason" ></span></div>
+        <div class="colorNormal" style="position: absolute;top: 56px;left: 24px;" >名前：<span key="name" ></span></div>
+        <div class="colorNormal" style="position: absolute;top: 95px;left: 24px;" >BTC：<span key="amount" ></span>BTC</div>
+        <div class="colorNormal" style="position: absolute;top: 135px;left: 24px;" >日時：<span key="update_at"></div>
+
+    </div>
+
+    <!-- 空の場合のHTML。クローンされてリストの中に挿入される。 -->
+    <div id="no-entry" class="colorNormal" style="width: 689px; text-align:center; line-height: 20; display:none">
+      出金依頼履歴がありません
+    </div>
+
+    <!--閉じるボタン-->
+    <div id="list-close" style="position:absolute;left: 240px;top: 890px;">
+      <div class="colorNormal" style="position: absolute; width:254px; height:74px; text-align: center;line-height: 74px;">閉じる</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}/img/parts/sp/btn_flame_254_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_254_74.png"|filemtime}'>
+    </div>
+  </div>
+
+</div>

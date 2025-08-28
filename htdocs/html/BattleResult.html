@@ -1,0 +1,138 @@
+<div id="content" style="width:750px;">
+  <div id="BattleResultContents" style="margin-top: calc(env(safe-area-inset-top));">
+
+    <!--ウィンドウ背景-->
+    <div id="bg_image" style="position: absolute;top: 0px;left: 0px;"></div>
+    <!--タイトル-->
+    <div style="position: absolute;top: 0px;left: 13px;"><img id="battle_result" src=''></div>
+
+<div id="battle_middle" style="position: absolute;top: 120px;width: 750px;">
+    <!--経験値-->
+    <div style="position: absolute;top: 86px;left: 292px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_exp_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_exp_panel.png"|filemtime}'></div>
+    <div style="position: absolute;top: 63px;left: 389px;"><canvas id="expgauge_sm"></canvas></div>
+
+    <!--マグナ-->
+    <div style="position: absolute;top: 122px;left: 292px;">
+      <div style="position: absolute;top: 0px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_gold_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_gold_panel.png"|filemtime}'></div>
+      <div id="add_gold" style="position: absolute;top: 14px;left: 137px;color:#ffcf67;font-size: 1.7em;width:  100px;"></div>
+      <div id="gold" style="position: absolute;top: 14px;left: 257px;color:#ffcf67;font-size: 1.7em;text-align: right;width: 150px;"></div>
+    </div>
+
+    <!--階級-->
+    <div style="position: absolute;top: 180px;left: 292px;">
+      <div style="position: absolute;top: 0px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_grade_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_grade_panel.png"|filemtime}'></div>
+      <div id="grade_nominal" style="position: absolute;top: 14px;left: 137px;color:#e6b1ff;font-size: 1.7em;width: 100px;"></div>
+      <div id="grade_pt"style="position: absolute;top: 14px;left: 256px;color:#e6b1ff;font-size: 1.7em;text-align: right;width: 150px;"></div>
+    </div>
+
+    <!--タブウィンドウ-->
+    <div style="position: absolute;top: 97px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_tabwin.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_tabwin.png"|filemtime}'></div>
+
+    <div id="SUM_panel" style="position: absolute;top: 323px; left: 33px;">
+        <div style="position: absolute;top: 0px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_win_summary.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_win_summary.png"|filemtime}'></div>
+        <div class="colorRed" style="position: absolute;top: 40px;left: 471px;text-align: right;width: 54px;" id="match_length" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 71px;left: 405px;text-align: right;width: 54px;" id="total_hurtP" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 71px;left: 557px;text-align: left;width: 54px;" id="total_hurtE" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 109px;left: 405px;text-align: right;width: 54px;" id="normal_hurtP" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 109px;left: 557px;text-align: left;width: 54px;" id="normal_hurtE" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 141px;left: 405px;text-align: right;width: 54px;" id="normal_hitsP" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 141px;left: 557px;text-align: left;width: 54px;" id="normal_hitsE" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 177px;left: 405px;text-align: right;width: 54px;" id="tact0P" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 177px;left: 557px;text-align: left;width: 54px;" id="tact0E" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 210px;left: 405px;text-align: right;width: 54px;" id="revenge_hurtP" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 210px;left: 557px;text-align: left;width: 54px;" id="revenge_hurtE" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 246px;left: 405px;text-align: right;width: 54px;" id="revenge_countP" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 246px;left: 557px;text-align: left;width: 54px;" id="revenge_countE" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 279px;left: 405px;text-align: right;width: 54px;" id="revenge_hitsP" >111</div>
+        <div class="colorNormal" style="position: absolute;top: 279px;left: 557px;text-align: left;width: 54px;" id="revenge_hitsE" >111</div>
+    </div>
+    <div id="EQP_panel" style="position: absolute;top: 323px; left: 33px;">
+      <div id="battle-result-list" style="position: absolute;">
+      </div>
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。 -->
+    <div id="battle-result-template" key="root" style="position: relative;float:left; ;width: 690px;height: 164px;display:none;">
+      <!--背景パネル-->
+      <div style="position: absolute;top: 0px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_panel_normal.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_panel_normal.png"|filemtime}' key="panel"></div>
+      <div style="position: absolute;top: 34px;left: 40px;"><img src='{$smarty.const.APP_WEB_ROOT}img/item/12005.gif' key="icon" style="width: 90px;"></div>
+      <div style="position: absolute;top: 0px;left: 0px;display:none;" key="batsu"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/batsu.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/batsu.png"|filemtime}'></div>
+
+      <!--アイテム名-->
+      <div class="colorNormal" style="position: absolute;top: 9px;left: 171px;font-size: 2em;" key="item_name" ></div>
+      <!--レベル-->
+      <div style="position: absolute;top: 9px;left: 504px;display:none;" key="lv_icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_levelicon_normal.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_levelicon_normal.png"|filemtime}'></div>
+      <div class="colorNormal" style="position: absolute;top: 16px;left: 512px;text-align: right;font-size: 1em;color: #ffa4aa;display:none;" key="level_txt"></div>
+      <div class="colorNormal" style="position: absolute;top: 12px;left: 600px;width: 50px;text-align: right;font-size: 1.5em;" key="level" ></div>
+      <!--耐久力-->
+      <div class="colorNormal" style="position: absolute;top: 51px;left: 257px;text-align: right;font-size: 1.5em;" key="durability" ></div>
+      <div class="colorNormal" style="position: absolute;top: 51px;left: 557px;text-align: right;font-size: 1.5em;" key="repaire" ></div>
+
+      <!--修理ボタン-->
+      <div style="position: absolute;top: 95px;left: 0px;display:none;" key="btn_repaire"><img class="blink" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_repair.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_repair.png"|filemtime}'></div>
+
+      <!--武器ステータス-->
+      <div style="position: absolute;top: 80px;left: 157px;" key="equip_panel">
+          <!--武器ステータス背景-->
+          <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_status_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_status_bg.png"|filemtime}'></div>
+          <!--武器ステータスアイコン-->
+          <div class="att1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att1.png"|filemtime}'></div>
+          <div class="att1-icon" key="att1-icon" style="left: 18px;display:none;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_levelup_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_levelup_icon.png"|filemtime}'></div>
+          <div class="att2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att2.png"|filemtime}'></div>
+          <div class="att2-icon" key="att2-icon" style="left: 144px;display:none;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_levelup_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_levelup_icon.png"|filemtime}'></div>
+          <div class="att3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att3.png"|filemtime}'></div>
+          <div class="att3-icon" key="att3-icon" style="left: 273px;display:none;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_levelup_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_levelup_icon.png"|filemtime}'></div>
+          <div class="spd-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_speed.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_speed.png"|filemtime}'></div>
+          <div class="spd-icon" key="spd-icon" style="left: 400px;display:none;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_levelup_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_levelup_icon.png"|filemtime}'></div>
+
+          <div class="def1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def1.png"|filemtime}'></div>
+          <div class="def1-icon" key="def1-icon" style="left: 18px;display:none;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_levelup_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_levelup_icon.png"|filemtime}'></div>
+          <div class="def2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def2.png"|filemtime}'></div>
+          <div class="def2-icon" key="def2-icon" style="left: 144px;display:none;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_levelup_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_levelup_icon.png"|filemtime}'></div>
+          <div class="def3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def3.png"|filemtime}'></div>
+          <div class="def3-icon" key="def3-icon" style="left: 273px;display:none;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_levelup_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_levelup_icon.png"|filemtime}'></div>
+          <div class="defX-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_defX.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_defX.png"|filemtime}'></div>
+          <div class="defX-icon" key="defX-icon" style="left: 400px;display:none;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_levelup_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_levelup_icon.png"|filemtime}'></div>
+
+          <div class="colorNearWhite att1-text" key="att1"></div>
+          <div class="colorNearWhite att2-text" key="att2"></div>
+          <div class="colorNearWhite att3-text" key="att3"></div>
+          <div class="colorNearWhite spd-text"  key="spd"></div>
+
+          <div class="colorNearWhite def1-text" key="def1"></div>
+          <div class="colorNearWhite def2-text" key="def2"></div>
+          <div class="colorNearWhite def3-text" key="def3"></div>
+          <div class="colorNearWhite defX-text" key="defX"></div>
+      </div>
+    </div>
+
+  <!--タブ-->
+  <div style="position: absolute;width: 750px;height: 100px;left: 365px;top: 230px;">
+    <!--タブ-->
+    <div style="position: absolute;left: 5px;top: 11px;">
+      <div style="display: inline;float:  left;width: 184px;height: 70px;" onclick="BattleResultDisplay.onChangeCategory('EQP')"><img id="tab-EQP" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_tab_equip.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_tab_equip.png"|filemtime}' style="width:184px;height:70px;display:none;"></div>
+      <div style="display: inline;float:  left;width: 184px;height: 70px;" onclick="BattleResultDisplay.onChangeCategory('SUM')"><img id="tab-SUM" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_tab_summary.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_tab_summary.png"|filemtime}' style="width:184px;height:70px;display:none;"></div>
+    </div>
+  </div>
+
+  <!--キャラ-->
+  <div  style="position: absolute;left: -10px;top: 24px;">
+    <canvas id="chara_smBtl"></canvas>
+  </div>
+  <!--スポットライト-->
+  <div style="position: absolute;left: 6px;top: -32px;display:none;" id="chara_spot"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/over_spot.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/over_spot.png"|filemtime}'></div>
+
+  <!--出発ボタン-->
+  <div id="btn_left" style="position:absolute;left: 15px;top: 1050px;">
+    <div class="colorNormal" style="position: absolute;width: 254px;height: 66px;text-align: center;line-height: 66px;" id="btn_left_text">メインページへ</div>
+    <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_254_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_254_66.png"|filemtime}'>
+  </div>
+
+  <!--出発やめボタン-->
+  <div id="btn_right" style="position:absolute;left: 482px;top: 1050px;">
+    <div class="colorNormal" style="position: absolute;width: 254px;height: 66px;text-align: center;line-height: 66px;" id="btn_right_text">フィールドへ</div>
+    <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_254_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_254_66.png"|filemtime}'>
+  </div>
+
+</div>
+</div>

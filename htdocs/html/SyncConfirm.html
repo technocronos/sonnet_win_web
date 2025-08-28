@@ -1,0 +1,61 @@
+<div id="content" style="width:724px; height:765px;">
+  <div id="SyncConfirm" >
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/sync_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/sync_window.png"|filemtime}'></div>
+
+    <!--タイトル-->
+    <div style="position: absolute;top: -12px;left: 176px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/sync_title.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/sync_title.png"|filemtime}'></div>
+
+    <!--アイテム背景-->
+    <div style="position: absolute;top: 65px;left: 277px;width: 175px;height: 173px;">
+      <div><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_image_back.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_image_back.png"|filemtime}' style="width: 175px;"></div>
+      <!--アイテムアイコン-->
+      <div style="position: absolute;top: 40px;left: 45px;">
+        <img id='item_image' src='' style="width: 90px;">
+      </div>
+    </div>
+
+    <!--アイテム名背景-->
+    <div style="position: absolute;top: 225px;left: 118px;width: 300px;">
+      <div style="position:  absolute;top: 0px;left:  0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/itemuse_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/itemuse_base.png"|filemtime}'></div>
+      <!--アイテム名-->
+      <div class="colorNormal" id="item_name" style="position: absolute;top: 47px;left: 103px;width: 300px;color:#ebd4d4;text-align:center;font-size: 2em;" >レキュパレータ</div>
+    </div>
+
+    <div style="position: absolute;top: 350px;left: 61px;">
+        <!--所持マグナウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/magna_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/magna_base.png"|filemtime}'></div>
+        <!--所持マグナ-->
+        <div class="colorNormal" id="gold" style="position: absolute;top: 24px;left: 113px;width: 163px;color:  #ebd4d4;text-align: right;" >100</div>
+    </div>
+
+    <div style="position: absolute;top: 350px;left: 361px;">
+        <!--必要マグナウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/needmagna_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/needmagna_base.png"|filemtime}'></div>
+        <!--必要マグナ-->
+        <div class="colorNormal" id="need_gold" style="position: absolute;top: 22px;left: 165px;width: 100px;color:  #3bbcbf;text-align: right;" >100</div>
+    </div>
+
+    <!--ナビセリフ背景-->
+    <div style="position: absolute;top: 519px;left: 80px;width: 339px;" ><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/serifu_win.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/serifu_win.png"|filemtime}'></div>
+
+    <!--ナビキャラ-->
+    <div style="position: absolute;left: 31px;top: 510px;"><img id="navi_conf" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/navi.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/navi.png"|filemtime}'></div>
+
+    <!--ナビセリフ-->
+    <div class="colorNormal" id="navi_serif_sync" style="position: absolute;top: 555px;left: 193px;width: 439px;" >今の装備に合成するのだ</div>
+
+    <!--購入ボタン-->
+    <div id="sync-confirm-ok" style="position:absolute;left: 197px;top: 669px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">する</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+    <!--キャンセルボタン-->
+    <div id="sync-confirm-close" style="position:absolute;left: 378px;top: 669px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">しない</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+  </div>
+</div>

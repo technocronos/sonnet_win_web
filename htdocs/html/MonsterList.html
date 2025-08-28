@@ -1,0 +1,45 @@
+<div id="content" style="width:750px;height: 870px;">
+  <div id="MonsterListContents" >
+
+    <!--背景パネル-->
+    <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/book_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/book_panel.png"|filemtime}'></div>
+
+    <!--ナビゲーター-->
+    <div style="position: absolute;top: 45px;left: 140px;">
+      <div style="position: absolute;top: 0px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/monster_list_hr.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/monster_list_hr.png"|filemtime}'></div>
+      <div class="colorLiteBlue2" style="position: absolute;top: 29px;left: 123px;width:  500px;" id="navigator"></div>
+    </div>
+
+    <!--絞り込みボタン-->
+    <div id="btn_filter" style="position:absolute;top: 44px;left: 13px;">
+      <div class="colorNormal" style="position: absolute; width:174px; height:74px; text-align: center;line-height: 74px;">絞り込み</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_battle_title.png"|filemtime}'>
+    </div>
+
+    <div style="position: absolute;top: 220px;left: 17px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/monster_list_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/monster_list_window.png"|filemtime}'></div>
+
+    <div class="scrollWrapper" style="position: absolute;margin-left: 30px;top: 234px;width: 701px;height: 635px;">
+      <div id="monster-list" style="position: absolute;">
+      </div>
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。装備用 -->
+    <div id="monster-template" key="root" style="position: relative;float: left; margin-left: 5px; margin-bottom: 0px;margin-top: 19px;width:324px;height: 362px;display:none;">
+      <div style="position: absolute;width:324px;height: 362px;" key="btn">
+        <div style="position: absolute;top: 0px;left: 0px;"><img src='' key="panel"></div>
+
+        <div style="position: absolute;top: 0px;left: 34px;" ><img key="image" src="" style="width:250px;"></div>
+        <div class="colorNearWhite" style="position: absolute;top: 323px;left: 13px;text-align:  center;width:  300px;" key="monster_no"></div>
+      </div>
+    </div>
+
+    <!--説明-->
+    <div class="colorNormal" id="monster_text" style="position:  absolute;left: 28px;top: 134px;width: 500px;color:#3c332a"></div>
+
+    <!--戻るボタン-->
+    <div id="dialogue-close" style="position:absolute;left: 540px;top: 128px;">
+      <div class="colorNormal" style="position: absolute; width:174px; height:74px; text-align: center;line-height: 74px;">戻る</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+  </div>
+</div>

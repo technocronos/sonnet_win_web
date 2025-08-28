@@ -1,0 +1,140 @@
+<div id="content" style="width:750px;transform-origin: top;">
+  <div id="ReadyContents"  style="display: flex;flex-direction: column;min-height: 100vh;display:none;margin-top: calc(env(safe-area-inset-top));">
+
+    <!--ウィンドウ背景-->
+    <div id="bg_image" style="position: absolute;top: -91px;left: 0px;"></div>
+
+    <div id="ready_head">
+
+        <!--タイトル-->
+        <div style="position: absolute;top: 0px;left: 34px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/ready_title.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/ready_title.png"|filemtime}'></div>
+
+    </div>
+    <div id="ready_middle">
+
+        <!--持ち出しアイテム個数-->
+        <div style="position: absolute;margin-top: 0px;left: 10px;">
+          <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/ready_icons.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/ready_icons.png"|filemtime}'></div>
+          <div class="colorRed" style="position: absolute;top: 6px;left: 148px;" id="RCV_TAKE" >0</div>
+          <div class="colorRed" style="position: absolute;top: 6px;left: 418px;" id="ATT_TAKE" >0</div>
+          <div class="colorRed" style="position: absolute;top: 6px;left: 646px;" id="EQP_TAKE" >0</div>
+        </div>
+
+        <!--タブ背景-->
+        <div style="position: absolute;margin-top: 87px;left: -3px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/ready_tab.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/ready_tab.png"|filemtime}'></div>
+
+        <!--背景-->
+        <div style="position: absolute;margin-top: 168px;left: 8px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/ready_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/ready_window.png"|filemtime}'></div>
+
+        <!--ドロップアイテム-->
+        <div class="scrollWrapper" style="position: absolute;margin-left: 21px; margin-top: 173px;width: 732px;height: 731px;">
+          <div id="ready-list" style="position: absolute;">
+          </div>
+        </div>
+
+        <!-- エントリテンプレート。クローンされてリストに中に挿入される。 -->
+        <div id="ready-template" key="root" style="position: relative;float: left;margin-top: 18px;width: 700px;height: 160px;display:none;">
+            <div key="cell" onclick="">
+              <div style="position: absolute;top: 0px;left: 12px;"><img src='' key="panel" ></div>
+              <div style="position: absolute;top: 30px;left: 55px;"><img src='' key="icon" style="width: 90px;"></div>
+
+              <div key="item_panel" style="display:none;">
+                <div class="colorNormal" style="position: absolute;top: 19px;left: 188px;font-size: 2em;" key="item_name" ></div>
+                <div class="colorRed" style="position: absolute;top: 23px;left: 482px;text-align: right;width: 100px;" key="has_count" ></div>
+                <div class="colorNormal" style="position: absolute;top: 100px;left: 189px;" key="item_value_text" >回復:</div>
+                <div class="colorRed" style="position: absolute;top: 100px;left: 227px;text-align:  right;width:  100px;" key="item_value" ></div>
+                <div class="colorNormal" style="position: absolute;top: 100px;left: 360px;" key="item_vfx_text" >射程:</div>
+                <div class="colorRed" style="position: absolute;top: 100px;left: 361px;text-align:  right;width:  100px;" key="item_limitation" ></div>
+                <div class="colorNormal" style="position: absolute;top: 100px;left: 523px;" key="item_limitation_text" >範囲:</div>
+                <div class="colorRed" style="position: absolute;top: 100px;left: 524px;text-align:  right;width:  100px;" key="item_spread" ></div>
+              </div>
+
+              <div key="weapon_panel" style="display:none;">
+                <div class="colorNormal" style="position: absolute;top: 9px;left: 171px;font-size: 2em;" key="item_name" ></div>
+                <div class="colorNormal" style="position: absolute;top: 51px;left: 283px;text-align:  right;font-size: 1.5em;" key="level" ></div>
+                <div class="colorNormal" style="position: absolute;top: 51px;left: 483px;text-align:  right;font-size: 1.5em;" key="durability" ></div>
+
+                <!--武器ステータス-->
+                <div style="position: absolute;top: 80px;left: 170px;">
+                    <!--武器ステータス背景-->
+                    <div><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_status_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_status_bg.png"|filemtime}'></div>
+                    <!--武器ステータスアイコン-->
+                    <div class="att1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att1.png"|filemtime}'></div>
+                    <div class="att2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att2.png"|filemtime}'></div>
+                    <div class="att3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att3.png"|filemtime}'></div>
+                    <div class="spd-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_speed.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_speed.png"|filemtime}'></div>
+
+                    <div class="def1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def1.png"|filemtime}'></div>
+                    <div class="def2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def2.png"|filemtime}'></div>
+                    <div class="def3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def3.png"|filemtime}'></div>
+                    <div class="defX-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_defX.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_defX.png"|filemtime}'></div>
+
+                    <div class="colorNearWhite att1-text" key="att1"></div>
+                    <div class="colorNearWhite att2-text" key="att2"></div>
+                    <div class="colorNearWhite att3-text" key="att3"></div>
+                    <div class="colorNearWhite spd-text"  key="spd"></div>
+
+                    <div class="colorNearWhite def1-text" key="def1"></div>
+                    <div class="colorNearWhite def2-text" key="def2"></div>
+                    <div class="colorNearWhite def3-text" key="def3"></div>
+                    <div class="colorNearWhite defX-text" key="defX"></div>
+                </div>
+              </div>
+            </div>
+
+            <div key="gray_panel" style="position: absolute;margin-left: 11px;width: 687px;height: 160px;background-color: gray;opacity: 0.5;display:none;"></div>
+
+            <div style="position: absolute;top: 4px;left: 613px;display:none;" key="take_count_panel">
+              <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/badage.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_battle_status.png"|filemtime}'>
+              <div class="colorNearWhite" style="position: absolute;top: 19px;left: 26px;font-size: 2em;" key="take_count"></div>
+            </div>
+            <div style="position: absolute;top: 93px;left: 17px;display:none;" key="cancel"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_remove.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_remove.png"|filemtime}'></div>
+
+        </div>
+
+        <!-- 空の場合のHTML。クローンされてリストの中に挿入される。 -->
+        <div id="no-entry" class="colorWhite" style="width: 750px;text-align: center;line-height: 27; display:none;">
+          (アイテムがありません)
+        </div>
+
+        <!--ウィンドウ背景-->
+        <div style="position: absolute; margin-top: 171px;left: 14px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_window_up.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_window_up.png"|filemtime}' style="width:724px;height:10px;"></div>
+        <!--ウィンドウ背景-->
+        <div style="position: absolute;margin-top: 895px;left: 14px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_window_down.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_window_down.png"|filemtime}' style="width:724px;height:10px;"></div>
+
+        <!--タブ-->
+        <div style="position: absolute;width: 750px;height: 100px;left: 5px; margin-top: 107px;>
+          <!--タブ-->
+          <div style="position: absolute;left: 5px;top: 11px;">
+            <div style="display: inline;float:  left;width: 121px;height: 70px;" onclick="ReadyDisplay.onChangeCategory('RCV')"><img id="tab-RCV" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/ready_tab_RCV_selected.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/ready_tab_RCV_selected.png"|filemtime}' style="width:124px;height:70px;display:none;"></div>
+            <div style="display: inline;float:  left;width: 121px;height: 70px;" onclick="ReadyDisplay.onChangeCategory('ATT')"><img id="tab-ATT" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/ready_tab_ATT_selected.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/ready_tab_ATT_selected.png"|filemtime}' style="width:124px;height:70px;display:none;"></div>
+            <div style="display: inline;float:  left;width: 121px;height: 70px;" onclick="ReadyDisplay.onChangeCategory('WPN')"><img id="tab-WPN" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/ready_tab_WPN_selected.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/ready_tab_WPN_selected.png"|filemtime}' style="width:124px;height:70px;display:none;"></div>
+            <div style="display: inline;float:  left;width: 121px;height: 70px;" onclick="ReadyDisplay.onChangeCategory('BOD')"><img id="tab-BOD" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/ready_tab_BOD_selected.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/ready_tab_BOD_selected.png"|filemtime}' style="width:124px;height:70px;display:none;"></div>
+            <div style="display: inline;float:  left;width: 121px;height: 70px;" onclick="ReadyDisplay.onChangeCategory('HED')"><img id="tab-HED" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/ready_tab_HED_selected.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/ready_tab_HED_selected.png"|filemtime}' style="width:124px;height:70px;display:none;"></div>
+            <div style="display: inline;float:  left;width: 121px;height: 70px;" onclick="ReadyDisplay.onChangeCategory('ACS')"><img id="tab-ACS" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/ready_tab_ACS_selected.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/ready_tab_ACS_selected.png"|filemtime}' style="width:124px;height:70px;display:none;"></div>
+          </div>
+        </div>
+
+        <div id="ready_foot">
+
+            <!--出発ボタン-->
+            <div id="ready-go" style="position:absolute;margin-left: 100px;margin-top: 0px;">
+              <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_ready_go.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_ready_go.png"|filemtime}'>
+            </div>
+
+            <!--出発やめボタン-->
+            <div id="ready-cancel" style="position:absolute;margin-left: 395px;margin-top: 16px;">
+              <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_ready_cancel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_ready_cancel.png"|filemtime}'>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--ナビ-->
+    <div style="position: absolute;left: -50px;top: 100px;display:none;" id="navi_panel_ready">
+        <canvas id="navi_sm_ready" style="position:absolute;"></canvas>
+    </div>
+
+  </div>
+</div>

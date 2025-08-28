@@ -1,0 +1,45 @@
+<div id="content" style="width:750px; ">
+  <div id="ItemGetSuccess" >
+
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;top: 0px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/preload/circle_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/preload/circle_bg.png"|filemtime}'></div>
+
+    <div style="position: absolute;top: 72px;left: 120px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/itemget_title_2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/itemget_title_2.png"|filemtime}'></div>
+
+    <div style="position: absolute;top: 150px;">
+
+      <!--アイテム背景-->
+      <div style="position: absolute;top: 72px;left: 289px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/item_image_back.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/item_image_back.png"|filemtime}'></div>
+      <!--アイテムアイコン-->
+      <div style="position: absolute;top: 100px;left: 320px;">{item_image_sm id=`$item.item_id`}</div>
+
+      <!--ウィンドウ背景-->
+      <div style="position: absolute;top: 275px;left: 50px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/popup_s_win.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/popup_s_win.png"|filemtime}'></div>
+
+      <!--ナビキャラ-->
+      <div style="position: absolute;left: 41px;top: 258px;"><img id="navi_result" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/navi2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/navi2.png"|filemtime}'></div>
+
+      <!--ナビセリフ-->
+      <div class="colorNormal" id="navi_serif_result" style="position: absolute;top: 301px;left: 177px;width: 439px;" >
+        {$item.item_name}ｹﾞｯﾄじゃぞ!ﾌｫｯﾌｫｯ､やはり{$smarty.const.PLATFORM_CURRENCY_NAME}よのぅ<br />
+      </div>
+
+      <!--OKボタン-->
+      <div style="position:absolute;left: 120px;top: 393px;">
+        <a href="{$nextUrl}">
+          <div class="colorNormal" style="position: absolute;width:254px;height:66px;text-align: center;line-height: 66px;">使用する</div>
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_254_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_254_66.png"|filemtime}'>
+        </a>
+      </div>
+
+      <!--戻るボタン-->
+      <div style="position:absolute;left: 380px;top: 393px;">
+        <a href="{$backto}" >
+          <div class="colorNormal" style="position: absolute;width:254px;height:66px;text-align: center;line-height: 66px;">戻る</div>
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_254_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_254_66.png"|filemtime}'>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>

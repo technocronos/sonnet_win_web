@@ -1,0 +1,195 @@
+<div id="content" style="width:724px;height: 982px;">
+  <div id="ShopListContents">
+
+    <!--ナビキャラセリフ-->
+    <div style="position: absolute;left: 57px;top: 59px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/serifu_win.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/serifu_win.png"|filemtime}'></div>
+    <!--セリフ-->
+    <div class="colorNormal" id="navi_serif" style="position:absolute;left: 166px;top: 79px;width: 450px;">ここはショップなのだ。買い物をするのだ。</div>
+    <div class="colorNormal" id="next_lv" style="position:absolute;left: 209px;top: 126px;width: 450px;text-align: right;color: red;"></div>
+
+    <!--ナビキャラ-->
+    <div style="position: absolute;left: 31px;top: 16px;"><img id="navi" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/navi.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/navi.png"|filemtime}'></div>
+
+    <!--通貨選択ボタン-->
+    <div style="position: absolute;left: 0px;top: 41px;" id="tab-currency">
+      <div onclick="ShopListDisplay.onChangeCurrency('gold')" style="position:absolute;left: 267px;top: 134px;">
+        <img id="tab1-gold" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_buy_gold.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_buy_gold.png"|filemtime}'>
+      </div>
+      <div onclick="ShopListDisplay.onChangeCurrency('coin')" style="position:absolute;left: 491px;top: 134px;">
+        <img id="tab1-coin" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_buy_coin.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_buy_coin.png"|filemtime}'>
+      </div>
+    </div>
+
+    <!--装備/アイテム選択タブ背景 廃止-->
+    <div id="tab-category-bg" style="position: absolute;width: 300px;height: 100px;left: -12px;top: 157px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_tab.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_tab.png"|filemtime}'></div>
+
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;top: 238px;left: -2px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_window.png"|filemtime}'></div>
+
+    <!--スクロール領域-->
+    <div class="scrollWrapper" style="position: absolute;margin-left: 14px;top: 241px;width: 723px;height: 657px;">
+      <div id="shop-list" style="position: absolute;">
+      </div>
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。 -->
+    <div id="shop-list-template" key="root" style="position: relative;float:left; margin-left: 4px;margin-top: 25px;margin-bottom: 0px;width: 690px;height: 297px;display:none;">
+      <div key="item_template">
+        <!--ウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/item_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/item_panel.png"|filemtime}'></div>
+
+        <!--アイテム名-->
+        <div class="colorNormal" style="position: absolute;top: 15px;left: 30px;width: 480px;" key="item_name" ></div>
+
+        <!--所持数-->
+        <div class="colorRed" style="position: absolute;top: 15px;left: 559px;width: 30px;text-align:right;font-size: 1.6em;" key="hold">53</div>
+
+        <!--所持数キャプション-->
+        <div style="position: absolute;top: 12px;left: 501px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/has_count_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/has_count_panel.png"|filemtime}'></div>
+
+        <!--アイテム背景-->
+        <div style="position: absolute;top: 67px;left: 8px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/item_image_back.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/item_image_back.png"|filemtime}'></div>
+        <!--アイテムアイコン-->
+        <div style="position: absolute;top: 100px;left: 40px;"><img src='' style="width: 90px;" key="image"></div>
+
+        <!--saleアイコン-->
+        <div style="position: absolute;top: 42px;left: 0px;"><img src='' style="width: 100px;" key="sale"></div>
+
+        <!--通貨アイコン-->
+        <div style="position: absolute;top: 63px;left: 166px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/gold_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/gold_icon.png"|filemtime}' key="currency_icon"></div>
+        <!--値段-->
+        <div class="colorRed" style="position: absolute;top: 62px;left: 171px;width: 100px;text-align:right;font-size: 1.4em;" key="price">53</div>
+        <!--通貨-->
+        <div class="colorNormal" style="position: absolute;top: 59px;left: 274px;width: 70px;" key="currency" >マグナ</div>
+
+        <!--アイテム説明背景-->
+        <div style="position: absolute;top: 153px;left: 163px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_text_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_text_base.png"|filemtime}'></div>
+
+        <div class="colorNormal" style="position: absolute;top: 91px;left: 164px;width: 74%;" key="flavor_text" ></div>
+        <div class="colorNormal" style="position: absolute;top: 168px;left: 169px;width: 74%;" key="effect" >HPを1000回復 射程2 範囲1 </div>
+
+        <!--詳細ボタン-->
+        <div style="position:absolute;left: 10px;top: 225px;" key="button">
+          <div class="colorNormal" style="position: absolute;width: 150px;height: 66px;text-align: center;line-height: 66px;">購入</div>
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_150_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_150_66.png"|filemtime}'>
+        </div>
+      </div>
+      <div key="equip_template">
+        <!--ウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/item_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/item_panel.png"|filemtime}'></div>
+
+        <!--アイテム名-->
+        <div class="colorNormal" style="position: absolute;top: 15px;left: 30px;width: 480px;" key="item_name" ></div>
+
+        <!--所持数-->
+        <div class="colorRed" style="position: absolute;top: 15px;left: 559px;width: 30px;text-align:right;font-size: 1.6em;" key="hold">53</div>
+
+        <!--所持数キャプション-->
+        <div style="position: absolute;top: 12px;left: 501px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/has_count_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/has_count_panel.png"|filemtime}'></div>
+
+        <!--アイテム背景-->
+        <div style="position: absolute;top: 71px;left: 11px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_image_back.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_image_back.png"|filemtime}'></div>
+        <!--アイテムアイコン-->
+        <div style="position: absolute;top: 100px;left: 40px;"><img src='' style="width: 90px;" key="image"></div>
+
+        <!--saleアイコン-->
+        <div style="position: absolute;top: 42px;left: 0px;"><img src='' style="width: 100px;" key="sale"></div>
+
+        <!--通貨アイコン-->
+        <div style="position: absolute;top: 65px;left: 166px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/gold_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/gold_icon.png"|filemtime}' key="currency_icon"></div>
+        <!--値段-->
+        <div class="colorRed" style="position: absolute;top: 62px;left: 171px;width: 100px;text-align:right;font-size: 1.4em;" key="price">53</div>
+        <!--通貨-->
+        <div class="colorNormal" style="position: absolute;top: 59px;left: 274px;width: 70px;" key="currency" >マグナ</div>
+
+        <!--耐久力アイコン-->
+        <div style="position: absolute;top: 62px;left: 368px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/dura_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/dura_icon.png"|filemtime}'></div>
+        <div class="colorNormal" style="position: absolute;top: 62px;left: 406px;font-size: 1.6em;">耐久力</div>
+
+        <!--耐久力-->
+        <div class="colorRed" style="position: absolute;top: 61px;left: 476px;width: 56px;text-align:  right;font-size: 1.4em;" key="duration" >53</div>
+
+        <!--テキスト-->
+        <div class="colorNormal" style="position: absolute;top: 91px;left: 164px;width: 476px;" key="flavor_text" ></div>
+
+        <!--武器ステータス-->
+        <div style="position: absolute;top: 146px;left: 161px;">
+            <!--武器ステータス背景-->
+            <div><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_status_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_status_bg.png"|filemtime}'></div>
+            <!--武器ステータスアイコン-->
+            <div class="att1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att1.png"|filemtime}'></div>
+            <div class="att2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att2.png"|filemtime}'></div>
+            <div class="att3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att3.png"|filemtime}'></div>
+            <div class="spd-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_speed.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_speed.png"|filemtime}'></div>
+
+            <div class="def1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def1.png"|filemtime}'></div>
+            <div class="def2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def2.png"|filemtime}'></div>
+            <div class="def3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def3.png"|filemtime}'></div>
+            <div class="defX-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_defX.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_defX.png"|filemtime}'></div>
+
+            <div class="colorNearWhite att1-text" key="att1">1000</div>
+            <div class="colorNearWhite att2-text" key="att2">1000</div>
+            <div class="colorNearWhite att3-text" key="att3">1000</div>
+            <div class="colorNearWhite spd-text"  key="spd">1000</div>
+
+            <div class="colorNearWhite def1-text" key="def1">1000</div>
+            <div class="colorNearWhite def2-text" key="def2">1000</div>
+            <div class="colorNearWhite def3-text" key="def3">1000</div>
+            <div class="colorNearWhite defX-text" key="defX">1000</div>
+        </div>
+
+
+        <!--詳細ボタン-->
+        <div style="position:absolute;left: 277px;top: 225px;" key="button">
+          <div class="colorNormal" style="position: absolute;width: 156px;height: 55px;text-align: center;line-height: 66px;">購入</div>
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_150_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_overrap.png"|filemtime}'>
+        </div>
+      </div>
+    </div>
+
+    <!-- 空の場合のHTML。クローンされてリストの中に挿入される。 -->
+    <div id="no-entry" class="colorNormal" style="width: 693px;text-align:center; line-height: 20; display:none">
+      このショップにアイテムはありません
+    </div>
+
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;top: 238px;left: -2px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_window_up.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_window_up.png"|filemtime}' style="width:724px;height:10px;"></div>
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;top: 890px;left: -2px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_window_down.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_window_down.png"|filemtime}' style="width:724px;height:10px;"></div>
+
+    <!--装備/アイテム選択タブ　廃止-->
+    <div id="tab-category-selected" style="position: absolute;width: 300px;height: 100px;left: -7px;top: 167px;">
+      <!--タブ-->
+      <div style="position: absolute;left: 5px;top: 11px;">
+        <div style="display: inline;float:  left;width: 124px;height: 70px;" onclick="ShopListDisplay.onChangeCategory('EQP')"><img id="tab2-EQP" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_tab_equip_selected.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_tab_equip_selected.png"|filemtime}' style="width:124px;height:70px;display:none;"></div>
+        <div style="display: inline;float:  left;width: 124px;height: 70px;" onclick="ShopListDisplay.onChangeCategory('ITM')"><img id="tab2-ITM" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_tab_item_selected.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_tab_item_selected.png"|filemtime}' style="width:124px;height:70px;display:none;"></div>
+      </div>
+    </div>
+
+    <div style="position: absolute;width: 300px;height: 100px;left: -7px;top: 167px;display:none;">
+      <div style="position: absolute;left: 5px;top: 11px;">
+        <div style="display: inline;float:  left;width: 124px;height: 70px;" ><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_tab_item_selected.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_tab_item_selected.png"|filemtime}' style="width:124px;height:70px;"></div>
+      </div>
+    </div>
+
+    <!--コイン購入ボタン-->
+    <div style="position: absolute;left: 549px;top: 861px;" id="btn_coin_list_area">
+      <div style="position: absolute;left: 0px;top: 0px;" id="btn_coin_list">
+        <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;"><img style="margin-top: 24px;" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/coin_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/coin_icon.png"|filemtime}'>コイン購入</div>
+        <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+      </div>
+    </div>
+
+
+      <!--特定商取引法に基づく表記ページボタン-->
+      {if $smarty.const.PLATFORM_OPERATOR_URL}
+      <div id="btn_syoutori" style="position:absolute;left: 530px;top: 900px;">
+        <a href="{$smarty.const.PLATFORM_OPERATOR_URL}">
+          <div class="colorNormal" style="position: absolute;width:245px;height:82px;text-align: center;line-height: 82px;font-size: 1.2em;">特定商取引法に基づく表記</div>
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_254_82.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_254_82.png"|filemtime}'>
+        </a>
+      </div>
+      {/if}
+
+  </div>
+</div>

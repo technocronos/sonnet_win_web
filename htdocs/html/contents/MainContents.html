@@ -1,0 +1,25 @@
+<!--背景-->
+<div id="canvas_bg" style="position:absolute;top: 0px;z-index:-1;"></div>
+
+<div style="margin: 0;display: flex;flex-flow: column;min-height: {if $isTablet=="phone"}105vh{else}110vh{/if};">
+
+    <main id="mainflex" style="flex: 1;">
+        <!--メインコンテンツ-->
+        <div id="main_contents" style="position:absolute;width:100%;display:none;margin-top:calc(env(safe-area-inset-top));"></div>
+    </main>
+
+    <canvas id="footer_sm" style="z-index:1;"></canvas>
+
+</div>
+
+<!--ヘッダー-->
+<canvas id="header_sm" style="position:absolute;"></canvas>
+
+
+<!--クリックガード-->
+<div id="click_gurde" style="position: absolute;top: 0px;width:750px;height:1600px;z-index:1;"></div>
+
+<!--ローディング-->
+<div id="loading" style="position: absolute;top: 0px;width:100%; height: 100%;background-color:#000;z-index:1;">
+  {include file='parts/mini_loading.tpl'}
+</div>

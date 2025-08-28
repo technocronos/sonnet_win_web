@@ -1,0 +1,100 @@
+<div id="content" style="width:750px;">
+  <div id="BattleConfirmContents" >
+
+    <!--ウィンドウ背景-->
+    <div id="bg_image" style="position: absolute;top: -240px;left: 0px;"></div>
+
+    <!--タイトル-->
+    <div style="position: absolute;top: 40px;left: 13px;">
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/user_battle_title.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_battle_title.png"|filemtime}'></div>
+
+        <!--階級、名前-->
+        <div class="colorLiteBlue2" style="position: absolute;top: 23px;left: 31px;width: 350px;text-align:  center;" id="gradeP"></div>
+        <div class="colorLiteBlue2" style="position: absolute;top: 54px;left: 31px;width: 294px;text-align:  center;font-size: 2.5em;" id="nameP"></div>
+
+        <!--敵階級、名前-->
+        <div class="colorLiteBlue2" style="position: absolute;top: 23px;left: 390px;width: 350px;text-align:  center;" id="gradeE"></div>
+        <div class="colorLiteBlue2" style="position: absolute;top: 54px;left: 431px;width: 294px;text-align:  center;font-size: 2.5em;" id="nameE"></div>
+    </div>
+
+    <div style="position: absolute;top: 225px;left: 334px;">
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/user_battle_status.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_battle_status.png"|filemtime}'></div>
+
+        <!--レベル-->
+        <div class="colorLiteRed" style="position: absolute;top: 0px;left: -105px;text-align: right;width: 100px;" id="levelP"></div>
+        <div class="colorLiteRed" style="position: absolute;top: 0px;left: 100px;width: 100px;" id="levelE"></div>
+
+        <!--HP-->
+        <div id="hp_gaugeP" style="position: absolute;left: -297px;top: 44px;">
+          <div style="position: absolute;left: 0px;top: -4px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_bg.png"|filemtime}'></div>
+          <div style="position: absolute;left: 7px;top: 0px;width:300px;">
+            <div style="position: relative;float:left;padding:  0px;margin:  0px;"><img id="hp_gauge_barP" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_gauge_bar.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_gauge_bar.png"|filemtime}' style="width: 277px;height: 28px;"></div>
+            <div style="position: relative;float:left;padding:  0px;margin:  0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_gauge_bar_top.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_gauge_bar_top.png"|filemtime}' style="width: 14px;height: 28px;"></div>
+          </div>
+          <div style="position: absolute;left: 16px;top: 5px;color:#97ffa0;font-size: 1.2em;">HP</div>
+          <div style="position: absolute;left: 120px;top: 5px;color:#97ffa0;font-size: 1.2em;" id="hp_textP">1000/1000</div>
+          <div style="position: absolute;left: 0px;top: -4px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_overrap.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_overrap.png"|filemtime}'></div>
+        </div>
+
+        <!--敵HP-->
+        <div id="hp_gaugeE" style="position: absolute;left: 92px;top: 44px;">
+          <div style="position: absolute;left: 0px;top: -4px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_bg.png"|filemtime}'></div>
+          <div style="position: absolute;left: 7px;top: 0px;width:300px;">
+            <div style="position: relative;float:left;padding:  0px;margin:  0px;"><img id="hp_gauge_barE" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_gauge_bar.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_gauge_bar.png"|filemtime}' style="width: 277px;height: 28px;"></div>
+            <div style="position: relative;float:left;padding:  0px;margin:  0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_gauge_bar_top.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_gauge_bar_top.png"|filemtime}' style="width: 14px;height: 28px;"></div>
+          </div>
+          <div style="position: absolute;left: 16px;top: 5px;color:#97ffa0;font-size: 1.2em;">HP</div>
+          <div style="position: absolute;left: 120px;top: 5px;color:#97ffa0;font-size: 1.2em;" id="hp_textE">1000/1000</div>
+          <div style="position: absolute;left: 0px;top: -4px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_overrap.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_overrap.png"|filemtime}'></div>
+        </div>
+
+        <!--ステータス-->
+        <div class="colorLiteRed" style="position: absolute;top: 100px;left: -105px;width: 100px;text-align: right;" id="att1P"></div>
+        <div class="colorLiteRed" style="position: absolute;top: 145px;left: -105px;width: 100px;text-align: right;" id="att2P"></div>
+        <div class="colorLiteRed" style="position: absolute;top: 192px;left: -105px;width: 100px;text-align: right;" id="att3P"></div>
+
+        <div class="colorLiteRed" style="position: absolute;top: 100px;left: 100px;width: 100px;" id="def1E"></div>
+        <div class="colorLiteRed" style="position: absolute;top: 145px;left: 100px;width: 100px;" id="def2E"></div>
+        <div class="colorLiteRed" style="position: absolute;top: 192px;left: 100px;width: 100px;" id="def3E"></div>
+
+        <div class="colorLiteRed" style="position: absolute;top: 237px;left: -105px;width: 100px;text-align: right;" id="spdP"></div>
+        <div class="colorLiteRed" style="position: absolute;top: 237px;left: 100px;width: 100px;" id="spdE"></div>
+    </div>
+
+    <div id="battle_middle" style="position: absolute;">
+        <!--スモーク-->
+        <div  style="position: absolute;left: 0px;top: 469px;width:750px;height:342px;" id="smork"></div>
+
+        <!--キャラ-->
+        <div  style="position: absolute; left: 0px;top:642px;">
+          <canvas id="chara_smP"></canvas>
+        </div>
+        <!--敵キャラ-->
+        <div style="position: absolute;left: 448px;top:642px;">
+          <canvas id="chara_smE" style="transform: scale(-1, 1);"></canvas>
+        </div>
+
+        <div  style="position: absolute; left: 180px;top:705px;">
+          <canvas id="spark_sm"></canvas>
+        </div>
+
+        <!--BP-->
+        <div style="position: absolute;left: 134px;top: 981px;">
+            <div style="position: absolute;top: 0px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/user_battle_bp_area.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_battle_bp_area.png"|filemtime}'></div>
+            <div class="colorLiteBlue2" style="position: absolute;top: 44px;left: 175px;text-align:  right;width:  150px;" id="bp"></div>
+        </div>
+
+        <!--対戦開始ボタン-->
+        <div id="btn_left" style="position:absolute;left: 95px;top: 1100px;">
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/user_battle_btn.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_battle_btn.png"|filemtime}'>
+        </div>
+
+        <!--キャンセルボタン-->
+        <div id="btn_right" style="position:absolute;left: 420px;top: 1112px;">
+          <img src="{$smarty.const.APP_WEB_ROOT}img/parts/sp/user_battle_cancel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_battle_cancel.png"|filemtime}">
+        </div>
+
+      </div>
+
+    </div>
+</div>

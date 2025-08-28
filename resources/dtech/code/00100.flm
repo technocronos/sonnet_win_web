@@ -1,0 +1,103 @@
+//
+// value2 で指定したターンの終了時、固定で value1 で指定したダメージを与える必殺技。
+// value2 には-1(最終ターン)、-2(ランダム)のいずれかを指定できる。
+
+    frame 0
+      push 'NAME'
+      push '[:dtech_name:]'
+      setVariable
+      push 'DESC'
+      push '[:dtech_desc:]'
+      setVariable
+      push 'DAM'
+      push '[:value1:]'
+      setVariable
+      push 'TURN'
+      push '[:value2:]'
+      setVariable
+      push 'init'
+      callFrame
+      stop
+    end // of frame 0
+
+    frame 3
+      push '/:$X3'
+      push 'TURN'
+      getVariable
+      setVariable
+      push '/:$X3'
+      getVariable
+      push '-1'
+      oldEquals
+      branchIfTrue label1
+      push '/:$X3'
+      getVariable
+      push '-2'
+      oldEquals
+      branchIfTrue label2
+      branch label3
+     label1:
+      push 'TURN'
+      push '/:timeupTurns'
+      getVariable
+      setVariable
+      branch label3
+     label2:
+      push 'TURN'
+      push '/:timeupTurns'
+      getVariable
+      random
+      push '1'
+      oldAdd
+      setVariable
+      branch label3
+     label3:
+    end // of frame 3
+
+    frame 5
+      push '../:notify'
+      getVariable
+      push 'turnend'
+      stringEq
+      push '../:notify'
+      getVariable
+      push 'turnend'
+      stringEq
+      not
+      branchIfTrue label1
+      pop
+      push '/main/info/turn/:value'
+      getVariable
+      push 'TURN'
+      getVariable
+      oldEquals
+     label1:
+      not
+      branchIfTrue label2
+      push 'effect'
+      push '1'
+      setVariable
+     label2:
+    end // of frame 5
+
+    frame 7
+      push '/main/:side'
+      push 'opp'
+      getVariable
+      setVariable
+      push '/main/:type'
+      push '4'
+      setVariable
+      push '/main/:value'
+      push 'DAM'
+      getVariable
+      setVariable
+      push '/main/:dir'
+      push '-1'
+      setVariable
+      push '/main/:way'
+      push 'O'
+      setVariable
+      push '/main/:damage'
+      callFrame
+    end // of frame 7

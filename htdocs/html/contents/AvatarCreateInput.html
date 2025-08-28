@@ -1,0 +1,46 @@
+<div id="content" style="width:750px;">
+  <div id="AvatarCreateInput" >
+    <!--背景-->
+    <div id="canvas_bg" style="position:absolute;"></div>
+
+    <div id="maincontent" style="position: absolute;width: 100%;height: 930px;display:none;">
+
+        <div style="position: absolute;left: 0px;top: 340px;">
+          <div class="colorWhite" style="position: absolute;top: -36px;width: 750px;text-align: center;">名前を入力してください</div>
+
+            <div style="position: absolute;left: 109px;top: 0px;">
+              <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/name_input_box.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/name_input_box.png"|filemtime}'></div>
+              <div style="position: absolute;left: 27px;top: 16px;">{form_input name="name" style="position:absolute;background-color:transparent;outline: 0;border: 0px;font-size:35px;color:#dbf4ff;"}</div>
+              <div class="colorWhite" style="position: absolute;left: 182px;top: 108px;width: 300px;">(全角{$smarty.const.USERNAME_DISPLAY_WIDTH/2}文字まで)</div>
+            </div>
+
+            <div class="colorWhite" style="position: absolute;left: 84px;top: 161px;width: 670px;">本名､ﾒｱﾄﾞなど個人の特定ができる情報は入力NGです</div>
+
+            <!--OKボタン-->
+            <div id="btn_ok" style="position:absolute;left: 283px;top: 231px;">
+              <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">OK</div>
+              <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+            </div>
+
+        </div>
+
+        <!--端末引き継ぎコード入力-->
+        <div style="position: absolute;top: 696px;width:100%;">
+            <div class="colorWhite" style="text-align:center">機種変更で引き継ぎコードがある方は入力してください</div>
+            <div  style="text-align:center; margin-top:20px;">{form_input name="inherit_code" style="font-size:35px;color:#000000;"}</div>
+
+            <!--OKボタン-->
+            <div id="btn_inherit" style="position:absolute;left: 284px;top: 152px;">
+              <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">OK</div>
+              <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+            </div>
+        </div>
+      </div>
+    <div>
+
+    <!--ナビ-->
+    <div style="position: absolute;margin-left: -62px;margin-top: 200px;">
+        <canvas id="navi_sm" style="position:absolute;"></canvas>
+    </div>
+
+</div>

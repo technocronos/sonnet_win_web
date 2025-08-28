@@ -1,0 +1,101 @@
+<div id="content" style="width:750px; height:1050px;">
+  <div id="BattleEventContents" >
+
+    <!--タイトル-->
+    <div style="position: absolute;top: 0px;left: 0px;">
+      <!--タイトル背景-->
+      <div style="position: absolute;top: 0px;left: 25px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/help_detail_title.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/help_detail_title.png"|filemtime}'></div>
+      <!--タイトル-->
+      <div class="colorWhite" style="position: absolute;margin-left: 220px;top: 37px;text-align:  center;width:  314px;font-size: 2em;">バトルランキング</div>
+    </div>
+
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;top: 192px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/user_battle_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_battle_window.png"|filemtime}'></div>
+
+    <!--ナビキャラセリフ-->
+    <div style="position: absolute;left: 50px;top: 112px">
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/popup_s_win.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/popup_s_win.png"|filemtime}'></div>
+
+      <!--セリフ-->
+      <div class="colorNormal" id="navi_serif_event" style="position:absolute;left: 137px;top: 24px;width: 400px;"></div>
+
+      <!--ナビキャラ-->
+      <div style="position: absolute;left: -10px;top: -20px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/navi.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/navi.png"|filemtime}'></div>
+
+      <!--説明ボタン-->
+      <div id="battle_event_help" style="position:absolute;left: 356px;top: 117px;">
+        <div class="colorNormal" style="position: absolute;width:254px;height:66px;text-align: center;line-height: 66px;">ルール・景品</div>
+        <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_254_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_254_66.png"|filemtime}'>
+      </div>
+    </div>
+
+    <!--タブ背景-->
+    <div style="position: absolute;width: 743px;height: 150px;left: 0px;top: 305px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/eventtab.png'></div>
+
+    <!--スクロール領域-->
+    <div class="scrollWrapper" style="position: absolute;margin-left: 20px;top: 398px;width: 726px;height: 553px;">
+      <div id="gradeuser-list" style="position: absolute;">
+      </div>
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。 -->
+    <div id="gradeuser-template" key="root" style="position: relative;float:left; margin-left: 4px;margin-top: 13px;margin-bottom: 0px;width: 690px;height: 180px;display:none;">
+        <!--ウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/user_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_panel.png"|filemtime}'></div>
+
+        <!--ユーザーアイコン-->
+        <div style="position:absolute;left: 9px;top: 57px;"><img src='' key="icon" style="width:107px;"></div>
+
+        <!--ランク順位-->
+        <div class="colorNearWhite" style="position: absolute;top: 24px;left: 40px;width: 100px;" key="rank" ></div>
+
+        <!--ユーザー名-->
+        <div class="colorNormal" style="position: absolute;top: 67px;left: 113px;width: 300px;" key="user_name" ></div>
+
+        <!--階級ポイント-->
+        <div class="colorNearWhite" style="position: absolute;top: 26px;left: 342px;" key="point" ></div>
+
+        <!--レベル-->
+        <div class="colorNormal" style="position: absolute;top: 108px;left: 149px;width: 50px;text-align:  right;" key="level" ></div>
+
+        <!--階級-->
+        <div class="colorNormal" style="position: absolute;top: 108px;left: 266px;width: 300px;" key="grade" ></div>
+
+        <!--最高順位-->
+        <div class="colorNormal" style="position: absolute;top: 150px;left: 266px;width: 300px;" key="highest" ></div>
+
+        <!--プロフボタン-->
+        <div style="position:absolute;left: 489px;top: 23px;" key="prof_button">
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_prof.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_prof.png"|filemtime}'>
+        </div>
+        <!--対戦ボタン-->
+        <div style="position:absolute;left: 490px;top: 94px;" key="battle_button">
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_battle2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_battle2.png"|filemtime}'>
+        </div>
+
+    </div>
+
+    <div id="no-entry-be" class="colorWhite" style="width: 693px;text-align:center; line-height: 20; display:none">
+      現在集計中・・
+    </div>
+
+    <!--タブ-->
+    <div id="tab-div" style="position: absolute;width: 750px;height: 100px;left: 11px;top: 325px;">
+      <div style="display: inline;float:  left;width: 364px;height: 70px;" onclick="BattleEventDisplay.onChangeCategory(12)">
+          <div ><img id="tab-12" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/eventtab-12.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/eventtab-12.png"|filemtime}' style="width:364px;height:70px;display:none;"></div>
+          <div class="colorNearWhite" style="position:absolute;left: 18px;top: 25px;font-size:  1.3em;" id="weekly_txt"></div>
+      </div>
+      <div style="display: inline;float:  left;width: 364px;height: 70px;" onclick="BattleEventDisplay.onChangeCategory(11)">
+          <div ><img id="tab-11" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/eventtab-11.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/eventtab-11.png"|filemtime}' style="width:364px;height:70px;display:none;"></div>
+          <div class="colorNearWhite" style="position:absolute;left: 381px;top: 29px;font-size: 1.3em;" id="daily_txt"></div>
+      </div>
+    </div>
+
+    <!--戻るボタン-->
+    <div id="battle_event_close" style="position:absolute;left: 258px;top: 956px;">
+      <div class="colorNormal" style="position: absolute;width:254px;height:66px;text-align: center;line-height: 66px;">戻る</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_254_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_254_66.png"|filemtime}'>
+    </div>
+
+  </div>
+</div>

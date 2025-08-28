@@ -1,0 +1,50 @@
+<div id="content" style="width:724px;">
+  <div id="HelpListContents" >
+
+  <!--ウィンドウ背景-->
+  <div id="bg_image" style="position: absolute;top: -60px;left: -13px;"></div>
+
+  <!--閉じるボタン-->
+  <div id="help-list-close" style="position:absolute;width:100%;text-align:right;margin-top:30px;"></div>
+
+  <div id="helpdiv" style="position: absolute;width:100%;top:139px;">
+
+    <div style="position: absolute;top: 200px;left: 0px;">
+      <img style="height: 626px;width: 734px;" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/help_win_cover.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/help_win_cover.png"|filemtime}'>
+    </div>
+
+      <!--ナビキャラセリフ-->
+      <div style="position: absolute;left: 57px;top: 46px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/serifu_win.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/serifu_win.png"|filemtime}'></div>
+      <!--セリフ-->
+      <div class="colorNormal" id="navi_serif" style="position:absolute;left: 166px;top: 67px;width: 510px;">ヘルプなのだ。</div>
+
+      <!--ナビキャラ-->
+      <div style="position: absolute;left: 31px;"><img id="navi" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/navi.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/navi.png"|filemtime}'></div>
+
+    <div class="scrollWrapper" style="position: absolute;margin-left: 5px;top: 215px;width: 716px;height: 600px;">
+      <div id="help-list" style="position: absolute;">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- エントリテンプレート。クローンされてリストに中に挿入される。 -->
+  <div id="help-template" key="root" style="position: relative;float: left;margin-bottom: 6px;width: 700px;height: 81px;;display:none;">
+    <div key="title_panel">
+      <div style="position: absolute;top: -5px;left: -18px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/help_title.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/help_title.png"|filemtime}'></div>
+      <div class="colorWhite" style="position: absolute;top: 32px;left: 23px;" key="title"></div>
+    </div>
+    <div key="koumoku_panel" onclick="HelpListDisplay.onDetailClick(this)" help_id="">
+      <div style="position: absolute;top: 0px;left: 12px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/help_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/help_panel.png"|filemtime}'></div>
+      <div style="position: absolute;top: 0px;left: 12px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/mark1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/mark1.png"|filemtime}'></div>
+      <div class="colorNormal" style="position: absolute;top: 30px;left: 117px;" key="help_title" ></div>
+    </div>
+  </div>
+
+  <!-- 空の場合のHTML。クローンされてリストの中に挿入される。 -->
+  <div id="no-entry" class="colorWhite" style="text-align:center; line-height: 20; display:none">
+    レコードがありません
+  </div>
+
+
+</div>

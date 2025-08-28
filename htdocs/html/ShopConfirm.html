@@ -1,0 +1,118 @@
+<div id="content" style="width:737px; height:765px;">
+  <div id="ShopConfirmContents" >
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_confirm_win.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_confirm_win.png"|filemtime}'></div>
+
+    <div style="position: absolute;top: 5px;left: 425px;">
+        <!--所持マグナウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_magna_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_magna_base.png"|filemtime}'></div>
+
+        <!--通貨アイコン-->
+        <div style="position: absolute;top: 17px;left: 28px;"><img id="currency_icon" src=""></div>
+        <div id="has_currency_text"  style="position: absolute;top: 12px;left: 58px;width:50px">所持<br>マグナ</div>
+
+        <!--所持マグナ-->
+        <div class="colorNormal" id="gold" style="position: absolute;top: 16px;left: 103px;width: 100px;color:  #ebd4d4;text-align: right;" >100</div>
+        <div id="currency2" class="colorNormal" style="position: absolute;top: 16px;left: 206px;width: 60px;color:  #ebd4d4;" >マグナ</div>
+    </div>
+
+    <!--アイテムカテゴリ-->
+    <div class="colorLiteRed" id="item_category" style="position: absolute;top: 32px;left: 52px;width: 300px;" >消費アイテム</div>
+
+    <!--アイテム名-->
+    <div class="colorLiteRed" id="item_name" style="position: absolute;top: 78px;left: 52px;width: 300px;font-size: 2.3em;" >レキュパレータ</div>
+
+    <!--通貨アイコン-->
+    <div style="position: absolute;top: 93px;left: 455px;"><img id="currency_icon2"></div>
+    <div style="position: absolute;top: 100px;left: 487px;width:50px;">単価</div>
+
+    <!--単価-->
+    <div class="colorNormal" id="price" style="position: absolute;top: 89px;left: 527px;width: 100px;color:  #ebd4d4;text-align:  right;" >100</div>
+    <div class="colorNormal" id="currency" style="position: absolute;top: 89px;left: 632px;width: 300px;color:  #ebd4d4;" >マグナ</div>
+
+
+    <!--アイテム背景-->
+    <div style="position: absolute;top: 151px;left: 39px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/item_image_back.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/item_image_back.png"|filemtime}' style="width: 120%;"></div>
+    <!--アイテムアイコン-->
+    <div style="position: absolute;top: 194px;left: 86px;"><img id='item_image' src='' style="width: 90px;"></div>
+
+    <!--saleアイコン-->
+    <div style="position: absolute;top: 118px;left: 19px;"><img id='sale_image' src='' style="width: 100px;"></div>
+
+    <!--↑ボタン-->
+    <div style="position:absolute;left: 317px;top: 152px;"><img id="btn_up" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/more_btn_up.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/more_btn_up.png"|filemtime}'></div>
+    <!--↓ボタン-->
+    <div style="position:absolute;left: 317px;top: 264px;"><img id="btn_down" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/more_btn_down_disable.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/more_btn_down_disable.png"|filemtime}'></div>
+
+    <!--購入数-->
+    <div class="colorLiteRed" style="position: absolute;top: 227px;left: 273px;width: 100px;text-align:right;font-size: 1.8em;" id="buy_count">1</div>
+
+    <!--合計値段-->
+    <div class="colorLiteRed" style="position: absolute;top: 226px;left: 531px;width: 100px;text-align:right;font-size: 1.8em;" id="total_price">10000</div>
+
+    <!--通貨アイコン-->
+    <div style="position: absolute;top: 230px;left: 455px;"><img id="currency_icon3"></div>
+
+    <!--テキスト-->
+    <div class="colorLiteRed" id="flavor_text" style="position: absolute;top: 351px;left: 40px;width: 649px;" ></div>
+
+    <!--アイテムステータス-->
+    <div id="item_status" style="position: absolute;top: 402px;left: 128px;">
+        <!--アイテム説明背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_text_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_text_base.png"|filemtime}'></div>
+        <div class="colorNormal" style="position: absolute;top: 8px;left: 8px;width: 490px;" id="effect" >HPを1000回復 射程2 範囲1 </div>
+    </div>
+    <!--武器ステータス-->
+    <div id="weapon_status" style="position: absolute;top: 435px;left: 101px;">
+        <!--武器ステータス背景-->
+        <div><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_status_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_status_bg.png"|filemtime}'></div>
+        <!--武器ステータスアイコン-->
+        <div class="att1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att1.png"|filemtime}'></div>
+        <div class="att2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att2.png"|filemtime}'></div>
+        <div class="att3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att3.png"|filemtime}'></div>
+        <div class="spd-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_speed.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_speed.png"|filemtime}'></div>
+
+        <div class="def1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def1.png"|filemtime}'></div>
+        <div class="def2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def2.png"|filemtime}'></div>
+        <div class="def3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def3.png"|filemtime}'></div>
+        <div class="defX-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_defX.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_defX.png"|filemtime}'></div>
+
+        <div class="colorNearWhite att1-text" id="att1">1000</div>
+        <div class="colorNearWhite att2-text" id="att2">1000</div>
+        <div class="colorNearWhite att3-text" id="att3">1000</div>
+        <div class="colorNearWhite spd-text" id="spd">1000</div>
+
+        <div class="colorNearWhite def1-text" id="def1">1000</div>
+        <div class="colorNearWhite def2-text" id="def2">1000</div>
+        <div class="colorNearWhite def3-text" id="def3">1000</div>
+        <div class="colorNearWhite defX-text" id="defX">1000</div>
+    </div>
+
+    <!--ナビキャラ-->
+    <div style="position: absolute;left: 31px;top: 510px;"><img id="navi_conf" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/navi.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/navi.png"|filemtime}'></div>
+
+    <!--ナビセリフ-->
+    <div class="colorNormal" id="navi_serif_conf" style="position: absolute;top: 544px;left: 168px;width: 490px;" >個数を決めて購入を押すのだ</div>
+
+    <!--購入ボタン-->
+    <div id="shop-confirm-buy" style="position:absolute;left: 197px;top: 669px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">購入</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+    <!--キャンセルボタン-->
+    <div id="shop-confirm-close" style="position:absolute;left: 378px;top: 669px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">キャンセル</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+    <!--コインボタン-->
+    <div style="position: absolute;left: 478px;top: 669px;" id="btn_coin_area">
+      <div style="position: absolute;left: 0px;top: 0px;" id="btn_coin">
+        <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;"><img style="margin-top: 24px;" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/coin_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/coin_icon.png"|filemtime}'>コイン購入</div>
+        <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<div id="content" style="width:750px;">
+  <div id="HomeContents" style="position: absolute;">
+
+    <div id="homeheader" style="position: absolute;margin-top: 152px;">
+        <!--お知らせパネル-->
+        <div style="position: absolute;left: 61px;top: 60px;">
+          <div style="position: absolute;left: 0px;top: 10px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/notice_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/notice_bg.png"|filemtime}'></div>
+          <div class="colorNearWhite" id="notice_latest" style="position: absolute;left: 70px;top: 60px;width: 420px;font-size:18px;letter-spacing:2px;"></div>
+        </div>
+
+        <!--お知らせボタン-->
+        <div style="position: absolute;left: 10px;top: 38px;" id="btn_notice"><img style="width: 100px;" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_notice.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_notice.png"|filemtime}' id="img_notice"></div>
+
+
+        <!--バトルボタン-->
+        <div style="position: absolute;left: 567px;top: 73px;" id="btn_battle"><img style="width: 150px;" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_battle.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_battle.png"|filemtime}' id="img_battle"></div>
+    </div>
+
+
+    <div id="homeflex" style="margin: 0;display: flex;flex-flow: column;">
+        <div id="home_flex1" style="flex:1">
+            <div id="home_main_div" style="width: 750px;text-align: center;height:324px;">
+
+                <!--クエストアイコン-->
+                <div id="quest_icon" style="position: absolute;width: 750px;">
+                  <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/home_quest_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/home_quest_icon.png"|filemtime}' style="width: 364px; margin-top: 66px;">
+                </div>
+
+                <!--バナー-->
+                <div id="promotion_bannar" style="position: absolute;width: 750px;display:none;">
+                  <img id="promotion_bannar_img" src='' style="width:404px;margin-top: 120px;">
+                </div>
+
+                <!--ナビ-->
+                <div style="position: absolute;margin-left: -62px;margin-top: -134px;">
+                    <canvas id="navi_sm" style="position:absolute;"></canvas>
+                </div>
+
+                <!--ビットコインボタン-->
+                <div id="btn_bitcoin" style="position: absolute;left: 663px;margin-top: 73px;display:none;">
+                  <img style="width:50px" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/bitcoin-icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/bitcoin-icon.png"|filemtime}'>
+                  <div style="position: absolute;left: -74px;top: 25px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/home_namepanel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/home_namepanel.png"|filemtime}'></div>
+                  <div class="colorNearWhite" style="position: absolute;left: -61px;top: 57px;width:174px;height:74px;font-size:22px;letter-spacing:0px;">ビットコイン</div>
+                </div>
+
+                <!--クエストボタン-->
+                <div style="position: absolute;margin-left: 385px;margin-top: 257px;" id="btn_quest"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_quest.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_quest.png"|filemtime}' id="img_quest"></div>
+
+            </div>
+        </div>
+
+        <div style="height: 200px;">
+            <!--足場-->
+            <div id="bg_front" style="position:absolute;"></div>
+
+            <!--キャラ-->
+            <canvas id="chara_sm" style="position:absolute;margin-top: -18%;"></canvas>
+            <div style="position: absolute;margin-left: 70px;margin-top: 20px;display:none;" id="in_quest"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/camp_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/camp_icon.png"|filemtime}'></div>
+
+            <!--名前パネル-->
+            <div id="name_panel" style="position: absolute;margin-left: 31px;margin-top:118px;display:none;">
+              <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/home_namepanel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/home_namepanel.png"|filemtime}'></div>
+              <div class="colorNearWhite" style="position: absolute;left: 0px;top: 32px;width: 200px;text-align:  center;font-size:22px;letter-spacing:0px;" id="player_name"></div>
+            </div>
+
+            <!--バナー-->
+            <div id="bannar_panel" style="position: absolute;margin-left: 305px;margin-top: 55px;display:none;">
+              <div style="position: absolute;left: 0px;top: 0px;"><img style="width: 442px;" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/home_banner.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/home_banner.png"|filemtime}'></div>
+              <div style="position: absolute;left: 26px;top: 13px;"><img style="width: 380px;" src='' id="banner"></div>
+              <div class="colorEmerald" style="position: absolute;left: 56px;top: 118px;width: 360px;font-size: 18px;letter-spacing:2px;" id="banner_explain"></div>
+            </div>
+
+            <!--実行中パネル-->
+            <div id="sally_quest_panel" style="position: absolute;margin-left: 103px;margin-top: 61px;display:none;">
+              <!--背景パネル-->
+              <div style="position: absolute;left: 261px;top: 0px;" key="panel"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/in_quest_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/in_quest_panel.png"|filemtime}' style="width: 330px;height: 171px;"></div>
+
+              <div style="position: absolute;left: 174px;top: -41px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/notice_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/notice_bg.png"|filemtime}'></div>
+
+              <!--実行中クエスト名-->
+              <div class="colorWhite" id="sally_quest_name" style="position: absolute;width: 431px;height:0px;left: 190px;top: 15px;color:#D0BFB1;text-align:  center;"></div>
+
+              <!--実行ボタン-->
+              <div id="quest_do" style="position:absolute;left: 291px;top: 50px;">
+                <div class="colorNormal" style="position: absolute;width:132px;height:70px;text-align: center;line-height: 70px;">実行</div>
+                <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_132_70.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_132_70.png"|filemtime}'>
+              </div>
+
+              <!--ギブアップボタン-->
+              <div id="quest_giveup" style="position:absolute;left: 438px;top: 50px;">
+                <div class="colorNormal" style="position: absolute;width:132px;height:70px;text-align: center;line-height: 70px;">ギブアップ</div>
+                <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_132_70.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_132_70.png"|filemtime}'>
+              </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+  </div>
+</div>

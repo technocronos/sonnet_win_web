@@ -1,0 +1,34 @@
+{if BTC_CAMPAIGN_PAYMENT_STOP}
+<span style="color: red;">100万円分のBTCが無くなったため、現在出金停止中です。沢山のご応募ありがとうございました。</span><br />
+<span style="color: red;">それに従い、{$smarty.const.BTC_CAMPAIGN_NAME}は終了とし、ビットコインの配布も停止となります。ご了承下さい。</span><br /><br />
+
+<span style="color: red;">また次の機会のキャンペーンをお楽しみに！</span>
+<br /><br /><br />
+{/if}
+
+{if $smarty.const.BTC_CAMPAIGN_START_DATE|strtotime <= $smarty.now && $smarty.const.BTC_CAMPAIGN_END_DATE|strtotime > $smarty.now}
+現在、<span style="color: red;">{$smarty.const.BTC_CAMPAIGN_NAME}</span>中！！<br /><br />
+<span style="color: red;">{$smarty.const.BTC_CAMPAIGN_START_DATE}～{$smarty.const.BTC_CAMPAIGN_END_DATE}まで！</span><br /><br />
+{/if}
+
+このゲームで<span style="color: red;">ビットコイン</span>をゲットすることができるのだ<br><br>
+
+今回は<span style="color: red;">総額100万円キャンペーン</span>なのだ。100万円以上になったらその地点でキャンペーン終了になるのだ。<br><br>
+
+何をしたらゲットできるかはそのつど、運営からお知らせがあるのだ。大体期間限定になるので見逃さないようにするのだ！<br><br>
+
+<span style="color: red;">今は、モンスター討伐とバトルランキングでビットコインを貰えるのだ。</span><br>
+期間限定でモンスターを倒したら、初回限定でなんとビットコインをもらうことができるのだ！<br><br>
+
+もらえるビットコインはレア度によって違うのだ。レアモンスターを倒せばたくさんビットコインがもらえるのだ。<br><br>
+
+ただし、図鑑登録の対象になっているモンスターのみが対象なのだ。大体図鑑登録されてるけどたまーに対象外のモンスターもいるのだ<br><br>
+
+また、バトルランキングはユーザー同士のバトルでランキングがあるからそれの上位に入賞したらもらえるのだ。<br><br>
+
+がんばって挑戦してみるのだ！！！<br><br>
+
+獲得したビットコインはホームからビットコインボタンでビットコインのページに行けば確認することができるのだ<br><br>
+
+期間外になったらキャンペーン終了ということでビットコインはもらえなくなるけどためたビットコインは出金依頼はできるのだ。<br><br>
+

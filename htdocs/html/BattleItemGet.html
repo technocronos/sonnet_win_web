@@ -1,0 +1,77 @@
+<div id="content" style="width:724px; height:814px;">
+  <div id="BattleItemGetContents" >
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/sync_result_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/sync_result_window.png"|filemtime}'></div>
+    <!--エフェクト-->
+    <div style="position: absolute; top: -248px; clip: rect(258px 750px 761px 0px);"><img id="rorate_image" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/rotate_effect.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/rotate_effect.png"|filemtime}'></div>
+    <!--ウィンドウカバー-->
+    <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_popup.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_popup.png"|filemtime}'></div>
+
+    <!--タイトル-->
+    <div style="position: absolute;top: -12px;left: 44px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/itemget_title.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/itemget_title.png"|filemtime}'></div>
+
+    <!--レベルアップ-->
+    <div id="grade_text" style="position: absolute;top: 112px;left: 237px;color:#b8feff;font-size: 2.5em;"></div>
+
+    <!--波紋用div-->
+    <div id="circle_div"></div>
+    <div id="circle_div2"></div>
+
+    <div id="item_panel" style="position: absolute;top: 194px;left: 25px;">
+      <div id="battle-itemget-list" style="position: absolute;">
+      </div>
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。 -->
+    <div id="battle-itemget-template" key="root" style="position: relative;float:left; ;width: 690px;height: 252px;display:none;">
+      <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/item_panel_684_252.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/item_panel_684_252.png"|filemtime}'></div>
+      <div style="position: absolute;top: 65px;left: 14px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/item_image_back.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/item_image_back.png"|filemtime}'></div>
+      <!--アイテムアイコン-->
+      <div style="position: absolute;top: 53px;left: 16px;"><img src='' key="icon" style="width: 160px;"></div>
+
+      <!--アイテム名-->
+      <div class="colorNormal" style="position: absolute;top: 14px;left: 36px;font-size: 2em;" key="item_name" ></div>
+      <!--フレーバーテキスト-->
+      <div class="colorNormal" style="position: absolute;top: 60px;left: 171px;font-size: 2em;" key="flavor_text" ></div>
+      <div key="item_panel" style="position: absolute;">
+        <!--効果-->
+        <div class="colorNormal" style="position: absolute;top: 136px;left: 174px;width: 490px;" key="effect" ></div>
+      </div>
+      <div key="equip_panel" style="position: absolute;top: 136px;left: 174px;">
+        <!--武器ステータス-->
+        <div style="position: absolute;top: 0px;left: 0px;">
+            <!--武器ステータス背景-->
+            <div><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_status_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_status_bg.png"|filemtime}'></div>
+            <!--武器ステータスアイコン-->
+            <div class="att1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att1.png"|filemtime}'></div>
+            <div class="att2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att2.png"|filemtime}'></div>
+            <div class="att3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att3.png"|filemtime}'></div>
+            <div class="spd-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_speed.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_speed.png"|filemtime}'></div>
+
+            <div class="def1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def1.png"|filemtime}'></div>
+            <div class="def2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def2.png"|filemtime}'></div>
+            <div class="def3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def3.png"|filemtime}'></div>
+            <div class="defX-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_defX.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_defX.png"|filemtime}'></div>
+
+            <div class="colorNearWhite att1-text" key="att1"></div>
+            <div class="colorNearWhite att2-text" key="att2"></div>
+            <div class="colorNearWhite att3-text" key="att3"></div>
+            <div class="colorNearWhite spd-text"  key="spd"></div>
+
+            <div class="colorNearWhite def1-text" key="def1"></div>
+            <div class="colorNearWhite def2-text" key="def2"></div>
+            <div class="colorNearWhite def3-text" key="def3"></div>
+            <div class="colorNearWhite defX-text" key="defX"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!--OKボタン-->
+    <div id="popup-close" style="position:absolute;left: 278px;top: 718px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">閉じる</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+  </div>
+</div>

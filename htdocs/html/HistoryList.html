@@ -1,0 +1,57 @@
+<div id="content" style="width:750px;height:879px;">
+  <!--暫定対応-->
+  <div id="HistoryListContents" style="position: absolute;top: -190px;">
+
+    <!--ウィンドウ背景-->
+    <div id="bg_image" style="position: absolute;top: 190px;left: 0px;"></div>
+
+    <!--タブ背景-->
+    <div id="tab-bg" style="position: absolute;width: 743px;height: 150px;left: 0px;top: 192px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/history-tab.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/history-tab.png"|filemtime}'></div>
+
+    <div class="scrollWrapper" style="position: absolute;margin-left: 26px;top: 273px;width: 723px;height: 687px;">
+      <div id="history-list" style="position: absolute;">
+      </div>
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。 -->
+    <div id="history-template" key="root" style="position: relative;float: left;margin-left: 0px;margin-top: 5px;margin-bottom: 5px;width: 708px;height: 189px;display:none;">
+
+      <!--ウィンドウ背景-->
+      <div style="position: absolute;top: 0px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/history_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/history_window.png"|filemtime}'></div>
+
+      <div class="colorNearWhite" style="position: absolute;top: 22px;left: 155px;width: 400px;" key="create_at"></div>
+      <div class="colorNearWhite" style="position: absolute;top: 24px;left: 482px;width: 200px;text-align:  right;" key="history_id"></div>
+      <div class="colorNormal" style="position: absolute;top: 65px;left: 155px;width: 200px;" key="player_name"></div>
+
+      <div style="position: absolute;top: -4px;left: 0px;" ><img style="width: 160px;" key="image" src=""></div>
+
+      <div class="colorNormal" style="position: absolute;top: 105px;left: 154px;width: 500px;" key="text"></div>
+    </div>
+
+    <!-- 空の場合のHTML。クローンされてリストの中に挿入される。 -->
+    <div id="no-entry" class="colorWhite" style="text-align:center; line-height: 20; width: 708px; display:none">
+      レコードがありません
+    </div>
+
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;top: 270px;left: 14px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_window_up.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_window_up.png"|filemtime}' style="width:724px;height:10px;"></div>
+
+    <!--タブ-->
+    <div style="position: absolute;width: 750px;height: 100px;left: 2px;top: 197px;">
+      <!--タブ-->
+      <div style="position: absolute;left: 5px;top: 11px;">
+        <div style="display: inline;float:  left;width: 364px;height: 70px;" onclick="HistoryListDisplay.onChangeTab('me')">
+          <div style="position: absolute;left: 0px;top: 0px;"><img id="tab-me" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/historytab-me.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/historytab-me.png"|filemtime}' style="width:364px;height:70px;display:none;"></div>
+          <div class="colorWhite" style="position: absolute;left: 26px;top: 21px;" id="tab-username"></div>
+        </div>
+        <div id="tab-member_touch" style="display: inline;float:  left;width: 364px;height: 70px;" onclick="HistoryListDisplay.onChangeTab('member')"><img id="tab-member" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/historytab-member.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/historytab-member.png"|filemtime}' style="width:364px;height:70px;display:none;"></div>
+      </div>
+    </div>
+
+    <!--閉じるボタン-->
+    <div id="dialogue-close" style="position:absolute;left: 284px;top: 983px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">閉じる</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+  </div>
+</div>

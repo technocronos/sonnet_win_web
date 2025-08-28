@@ -1,0 +1,130 @@
+<div id="content" style="width:724px;height:818px">
+  <div id="ParamSeedContents" >
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_win.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_win.png"|filemtime}'></div>
+
+    <!--ナビキャラセリフ-->
+    <div style="position: absolute;left: 35px;top: 32px;">
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/serifu_win.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/serifu_win.png"|filemtime}'></div>
+
+      <!--セリフ-->
+      <div class="colorNormal" id="navi_serif" style="position:absolute;left: 137px;top: 24px;width: 400px;"></div>
+
+      <!--ナビキャラ-->
+      <div style="position: absolute;left: -10px;top: -20px;"><img id="navi" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/navi.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/navi.png"|filemtime}'></div>
+    </div>
+
+    <div style="position: absolute;top: 22px;left: 542px;">
+        <!--所持ステータスPTウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_panel.png"|filemtime}'></div>
+        <div class="colorNormal" id="curr_param_seed" style="position: absolute;top: 54px;left: 38px;width: 100px;text-align: center;color:#ff9030" ></div>
+    </div>
+
+    <!--ステータス-->
+    <div id="status" style="position: absolute;top: 163px;left: 101px;">
+        <!--ステータス項目画像-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/statics.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/statics.png"|filemtime}'></div>
+
+        <div style="position:absolute;left: 180px;top: 4px;">
+          <div class="colorNearWhite" style="position:absolute;left: -31px;top: 0px;text-align:  right;width:  100px;" id="curr_att1">1000</div>
+
+          <!--↑ボタン-->
+          <div style="position:absolute;left: 194px;top: -13px;"><img id="att1_btn_up" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_up_btn.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_up_btn.png"|filemtime}'></div>
+
+          <div class="colorNearWhite" style="position:absolute;left: 282px;text-align: right;top: 0px;width:  50px;" id="att1_add">0</div>
+          <!--↓ボタン-->
+          <div style="position:absolute;left: 340px;top: -13px;"><img id="att1_btn_down" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_down_btn_disable.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_down_btn_disable.png"|filemtime}'></div>
+        </div>
+
+        <div style="position:absolute;left: 180px;top: 69px;">
+          <div class="colorNearWhite" style="position:absolute;left: -31px;top: 0px;text-align:  right;width:  100px;" id="curr_att2">1000</div>
+
+          <!--↑ボタン-->
+          <div style="position:absolute;left: 194px;top: -13px;"><img id="att2_btn_up" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_up_btn.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_up_btn.png"|filemtime}'></div>
+
+          <div class="colorNearWhite" style="position:absolute;left: 282px;text-align: right;top: 0px;width:  50px;" id="att2_add">0</div>
+          <!--↓ボタン-->
+          <div style="position:absolute;left: 340px;top: -13px;"><img id="att2_btn_down" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_down_btn_disable.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_down_btn_disable.png"|filemtime}'></div>
+        </div>
+
+        <div style="position:absolute;left: 180px;top: 132px;">
+          <div class="colorNearWhite" style="position:absolute;left: -31px;top: 0px;text-align:  right;width:  100px;" id="curr_att3">1000</div>
+
+          <!--↑ボタン-->
+          <div style="position:absolute;left: 194px;top: -13px;"><img id="att3_btn_up" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_up_btn.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_up_btn.png"|filemtime}'></div>
+
+          <div class="colorNearWhite" style="position:absolute;left: 282px;text-align: right;top: 0px;width:  50px;" id="att3_add">0</div>
+          <!--↓ボタン-->
+          <div style="position:absolute;left: 340px;top: -13px;"><img id="att3_btn_down" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_down_btn_disable.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_down_btn_disable.png"|filemtime}'></div>
+        </div>
+
+        <div style="position:absolute;left: 180px;top: 197px;">
+          <div class="colorNearWhite" style="position:absolute;left: -31px;top: 0px;text-align:  right;width:  100px;" id="curr_def1">1000</div>
+
+          <!--↑ボタン-->
+          <div style="position:absolute;left: 194px;top: -13px;"><img id="def1_btn_up" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_up_btn.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_up_btn.png"|filemtime}'></div>
+
+          <div class="colorNearWhite" style="position:absolute;left: 282px;text-align: right;top: 0px;width:  50px;" id="def1_add">0</div>
+          <!--↓ボタン-->
+          <div style="position:absolute;left: 340px;top: -13px;"><img id="def1_btn_down" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_down_btn_disable.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_down_btn_disable.png"|filemtime}'></div>
+        </div>
+
+        <div style="position:absolute;left: 180px;top: 260px;">
+          <div class="colorNearWhite" style="position:absolute;left: -31px;top: 0px;text-align:  right;width:  100px;" id="curr_def2">1000</div>
+
+          <!--↑ボタン-->
+          <div style="position:absolute;left: 194px;top: -13px;"><img id="def2_btn_up" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_up_btn.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_up_btn.png"|filemtime}'></div>
+
+          <div class="colorNearWhite" style="position:absolute;left: 282px;text-align: right;top: 0px;width:  50px;" id="def2_add">0</div>
+          <!--↓ボタン-->
+          <div style="position:absolute;left: 340px;top: -13px;"><img id="def2_btn_down" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_down_btn_disable.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_down_btn_disable.png"|filemtime}'></div>
+        </div>
+
+        <div style="position:absolute;left: 180px;top: 326px;">
+          <div class="colorNearWhite" style="position:absolute;left: -31px;top: 0px;text-align:  right;width:  100px;" id="curr_def3">1000</div>
+
+          <!--↑ボタン-->
+          <div style="position:absolute;left: 194px;top: -13px;"><img id="def3_btn_up" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_up_btn.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_up_btn.png"|filemtime}'></div>
+
+          <div class="colorNearWhite" style="position:absolute;left: 282px;text-align: right;top: 0px;width:  50px;" id="def3_add">0</div>
+          <!--↓ボタン-->
+          <div style="position:absolute;left: 340px;top: -13px;"><img id="def3_btn_down" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_down_btn_disable.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_down_btn_disable.png"|filemtime}'></div>
+        </div>
+
+        <div style="position:absolute;left: 180px;top: 390px;">
+          <div class="colorNearWhite" style="position:absolute;left: -31px;top: 0px;text-align:  right;width:  100px;" id="curr_spd">1000</div>
+
+          <!--↑ボタン-->
+          <div style="position:absolute;left: 194px;top: -13px;"><img id="spd_btn_up" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_up_btn.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_up_btn.png"|filemtime}'></div>
+
+          <div class="colorNearWhite" style="position:absolute;left: 282px;text-align: right;top: 0px;width:  50px;" id="spd_add">0</div>
+          <!--↓ボタン-->
+          <div style="position:absolute;left: 340px;top: -13px;"><img id="spd_btn_down" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_down_btn_disable.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_down_btn_disable.png"|filemtime}'></div>
+        </div>
+
+        <div style="position:absolute;left: 180px;top: 452px;">
+          <div class="colorNearWhite" style="position:absolute;left: -31px;top: 0px;text-align:  right;width:  100px;" id="curr_hp">1000</div>
+
+          <!--↑ボタン-->
+          <div style="position:absolute;left: 194px;top: -13px;"><img id="hp_btn_up" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_up_btn.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_up_btn.png"|filemtime}'></div>
+
+          <div class="colorNearWhite" style="position:absolute;left: 282px;text-align: right;top: 0px;width:  50px;" id="hp_add">0</div>
+          <!--↓ボタン-->
+          <div style="position:absolute;left: 340px;top: -13px;"><img id="hp_btn_down" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/status_down_btn_disable.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/status_down_btn_disable.png"|filemtime}'></div>
+        </div>
+    </div>
+
+    <!--振り分けボタン-->
+    <div id="param_seed_ok" style="position:absolute;left: 197px;top: 724px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 66px;">決定</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74_disable.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74_disable.png"|filemtime}'>
+    </div>
+
+    <!--キャンセルボタン-->
+    <div id="param_seed_close" style="position:absolute;left: 378px;top: 724px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 66px;">キャンセル</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+  </div>
+</div>

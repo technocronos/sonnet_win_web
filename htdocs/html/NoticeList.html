@@ -1,0 +1,42 @@
+<div id="content" style="width:739px;height:733px;">
+  <div id="NoticeListContents" >
+
+    <!--ウィンドウ背景-->
+    <div style="position:absolute;left: 5px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/popup_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/popup_window.png"|filemtime}'></div>
+
+    <!--タイトル-->
+    <div class="colorNormal" id="title" style="position:absolute;left: 320px;top: 28px;">お知らせ</div>
+
+    <!--スクロール領域-->
+    <div class="scrollWrapper" style="position: absolute;margin-left: 34px;top: 70px;width: 690px;height: 551px;">
+      <div id="notice-list" style="position: absolute;"></div>
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。 -->
+    <div id="notice-list-template" key="root" style="position: relative;float: left;margin-top: 10px;margin-bottom: 16px;width: 700px;height: 195px; display:none;">
+        <!--ウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/contents_frame.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/contents_frame.png"|filemtime}'></div>
+
+        <div class="colorNormal" style="position: absolute;top: 8px;left: 8px;width: 92%;font-size:26px;" key="notify_at" ></div>
+        <div class="colorNormal" style="position: absolute;top: 40px;left: 24px;width: 90%;font-size:26px;" key="title" ></div>
+
+        <!--詳細ボタン-->
+        <div style="position:absolute;left: 471px;top: 130px;" key="button">
+          <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 70px;">詳細</div>
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+        </div>
+    </div>
+
+    <!-- 空の場合のHTML。クローンされてリストの中に挿入される。 -->
+    <div id="no-entry" class="colorNormal" style="width: 689px; text-align:center; line-height: 20; display:none">
+      レコードがありません
+    </div>
+
+    <!--閉じるボタン-->
+    <div id="notice-list-close" style="position:absolute;left: 280px;top: 638px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 66px;">閉じる</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+    
+  </div>
+</div>

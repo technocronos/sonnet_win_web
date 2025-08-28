@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+* {
+    font-family: "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 10pt
+}
+
+body {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+a:link,a:visited {
+    color: royalblue;
+}
+a:hover {
+    color: white;
+    background-color: royalblue;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background-color: lightblue;
+    font-weight: normal;
+}
+
+td, th {
+    border: solid black 1px;
+}
+
+h2 {
+    border-bottom: 1px solid palegreen;
+    border-left: 10px solid palegreen;
+    font-weight: normal;
+    margin: 1ex 0ex;
+    padding: 2px;
+}
+
+p {
+    margin: 1ex 0ex;
+}
+
+dt {
+    border-left: solid purple 5px
+}
+
+ul, ol {
+    margin: 0px;
+    padding-left: 1em;
+}
+
+.value {
+    color: indianred;
+}
+
+.error {
+    color: red;
+}
+
+.graph {
+    position: relative;
+}
+
+.graphBar {
+    height: 1em;
+    background-color: pink;
+}
+
+.graphNobar {
+    height: 1em;
+}
+
+.graphNumber {
+    position: absolute;
+    top: 0px;
+    text-align: right;
+    width: 100%;
+}

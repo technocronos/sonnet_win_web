@@ -1,0 +1,15 @@
+端末が変わる場合は引き継ぎコードを入力すればその端末にデータを引き継ぐことができるのだ。<br><br>
+
+        <!--端末引き継ぎコード入力-->
+        <div style="position: absolute;top: 135px;width:100%;">
+            <div style="text-align:center">機種変更で引き継ぎコードがある方は入力してください</div>
+
+            <div  style="text-align:center; margin-top:63px;">{form_input name="inherit_code" style="font-size:35px;color:#000000;"}</div>
+            <div id="inherit_err" style="text-align:center;color:red;display:none;"></div>
+
+            <!--OKボタン-->
+            <div id="btn_inherit" style="position:absolute;left: 247px;top: 222px;">
+              <div style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">引き継ぎ</div>
+              <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+            </div>
+        </div>

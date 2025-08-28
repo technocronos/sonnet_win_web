@@ -1,0 +1,74 @@
+<div id="content" style="width:732px;height: 914px;">
+  <div id="MonsterDetailContents" >
+
+    <!--背景パネル-->
+    <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/monster_detail_win.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/monster_detail_win.png"|filemtime}'></div>
+
+    <!--モンスターカード-->
+    <div style="position: absolute;top: 30px;left: 185px;"><img id="monster_card" src="" style="width: 360px;"></div>
+    <div style="position: absolute;top: 140px;left: 256px;"><img id="monster_icon" src="" style="width: 220px;"></div>
+    <div style="position: absolute;top: 64px;left: 215px;width:  300px;text-align:center;font-size: 40px;" id="monster_name"></div>
+    <div class="colorNearWhite" style="position: absolute;top: 428px;left: 219px;width: 290px;font-size:  30px;color: #000;letter-spacing:0px;" id="monster_flavor_text" ></div>
+
+    <!--種族-->
+    <div style="position: absolute;left: 30px;top: 429px;">
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/race_title_ico.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/race_title_ico.png"|filemtime}'></div>
+      <div class="colorNearWhite" id="field" style="position: absolute;top: 66px;left: 23px;width: 100px;text-align:  center;">植物</div>
+    </div>
+
+    <!--レア度-->
+    <div style="position: absolute;left: 560px;top: 438px;">
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/rare_title_ico.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/rare_title_ico.png"|filemtime}'></div>
+      <div class="colorNearWhite" id="rare" style="position: absolute;top: 52px;left: 25px;width:  100px;text-align:  center;">ノーマル</div>
+    </div>
+
+    <div style="position: absolute;left: 0px;top: 500px;">
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/monster_detail_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/monster_detail_panel.png"|filemtime}'></div>
+
+      <!--HP-->
+      <div style="position: absolute;left: 123px;top: 103px;">
+        <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/HP_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/HP_icon.png"|filemtime}'></div>
+        <div class="colorLiteBlue2" style="position: absolute;top: 0px;left: 37px;">HP</div>
+        <div class="colorLiteBlue2" id="hp_max" style="position: absolute;top: 0px;left: 87px;"></div>
+      </div>
+
+      <!--生息地-->
+      <div style="position: absolute;left: 120px;top: 241px;">
+        <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/address_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/address_icon.png"|filemtime}'></div>
+        <div class="colorLiteBlue2" id="habitat" style="position: absolute;top: 21px;left: 100px;width:  300px;"></div>
+      </div>
+
+      <!--武器ステータス-->
+      <div style="position: absolute;top: 157px;left: 117px;">
+          <!--武器ステータス背景-->
+          <div><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_status_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_status_bg.png"|filemtime}'></div>
+          <!--武器ステータスアイコン-->
+          <div class="att1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att1.png"|filemtime}'></div>
+          <div class="att2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att2.png"|filemtime}'></div>
+          <div class="att3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att3.png"|filemtime}'></div>
+          <div class="spd-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_speed.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_speed.png"|filemtime}'></div>
+
+          <div class="def1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def1.png"|filemtime}'></div>
+          <div class="def2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def2.png"|filemtime}'></div>
+          <div class="def3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def3.png"|filemtime}'></div>
+
+          <div class="colorNearWhite att1-text" id="att1">1000</div>
+          <div class="colorNearWhite att2-text" id="att2">1000</div>
+          <div class="colorNearWhite att3-text" id="att3">1000</div>
+          <div class="colorNearWhite spd-text"  id="spd">1000</div>
+
+          <div class="colorNearWhite def1-text" id="def1">1000</div>
+          <div class="colorNearWhite def2-text" id="def2">1000</div>
+          <div class="colorNearWhite def3-text" id="def3">1000</div>
+      </div>
+
+    </div>
+
+    <!--閉じるボタン-->
+    <div id="detail-close" style="position:absolute;left: 297px;top: 811px;">
+      <div class="colorNormal" style="position: absolute; width:174px; height:74px; text-align: center;line-height: 74px;">閉じる</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+  </div>
+</div>

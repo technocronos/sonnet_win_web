@@ -1,0 +1,212 @@
+<div id="content" style="width:750px;height: 910px;">
+  <div id="MypageContents" >
+
+    <div style="position: absolute;left: 90px;top: 189px;">
+      <!--△-->
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/equip_triangle.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/equip_triangle.png"|filemtime}'></div>
+      <!--透明△-->
+      <div style="position: absolute;left: 0px;top: -88px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/equip_ebtn_outer_metal.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/equip_ebtn_outer_metal.png"|filemtime}'></div>
+      <!--魔法陣-->
+      <div style="position: absolute;left: 104px;top: 72px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/equip_circle.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/equip_circle.png"|filemtime}'></div>
+      <!--装備箇所表示-->
+      <div style="position: absolute;left: -34px;top: -67px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/equip_detail_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/equip_detail_icon.png"|filemtime}'></div>
+      <!--カーソル-->
+      <div style="position: absolute;left: 125px;top: 85px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/equip_cursor.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/equip_cursor.png"|filemtime}'></div>
+
+      <!--キャラ-->
+      <canvas id="chara_sm" style="position:absolute;"></canvas>
+
+      <div style="position: absolute;left: 57px;top: 59px;">
+        <!--円状ボタン上-->
+        <div id="btn_hed" style="position: absolute;left: 93px;top: -24px;">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/equip_top.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/equip_top.png"|filemtime}'></div>
+          <div class="colorNormal" id="hed_text" style="position: absolute;top: 15px;width: 266px;height:100px;text-align: center;"></div>
+        </div>
+        <!--円状ボタン左-->
+        <div id="btn_acs" style="position: absolute;left: 19px;top: 54px;">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/equip_left.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/equip_left.png"|filemtime}'></div>
+          <div class="colorNormal" id="acs_text" style="position: absolute;left: -106px;top: 113px;text-align:center;width: 266px;transform: rotate(-90deg);"></div>
+        </div>
+        <!--円状ボタン右-->
+        <div id="btn_wpn" style="position: absolute;left: 344px;top: 48px;">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/equip_right.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/equip_right.png"|filemtime}'></div>
+          <div class="colorNormal" id="wpn_text" style="position: absolute;left: -74px;top: 113px;text-align:center;width:  266px;transform: rotate(90deg);"></div>
+        </div>
+        <!--円状ボタン下-->
+        <div id="btn_bod" style="position: absolute;left: 92px;top: 305px;">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/equip_bottom.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/equip_bottom.png"|filemtime}'></div>
+          <div class="colorNormal" id="bod_text" style="position: absolute;left: 1px;top: 48px;width: 266px;text-align:center;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--階級-->
+    <div style="position: absolute;left: 476px;top: 113px;">
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/equip_greed_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/equip_greed_panel.png"|filemtime}'></div>
+      <div class="colorNearWhite" id="grade_name" style="position:  absolute;width:  200px;top: 41px;left: 31px;text-align:  center;color:  #B289F9;"></div>
+      <div class="colorNearWhite" id="grade_pt" style="position:  absolute;width: 100px;top: 76px;left: 73px;text-align: right;color:  #B289F9;font-size: 1.3em;"></div>
+
+      <div class="colorNearWhite" id="raise_border" style="position:  absolute;width: 100px;top: 103px;left: 85px;text-align: right;color:  #B289F9;font-size: 1.3em;"></div>
+      <div class="colorNearWhite" id="abase_border" style="position:  absolute;width: 100px;top: 124px;left: 85px;text-align: right;color:  #B289F9;font-size: 1.3em;"></div>
+      <div style="position: absolute;left: 150px;top: 148px;" id="grade_list_btn"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_gradelist.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_gradelist.png"|filemtime}'></div>
+    </div>
+
+    <!--ステータス-->
+    <div style="position: absolute;left: 14px;top: 121px;">
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/equip_status_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/equip_status_panel.png"|filemtime}'></div>
+      <div class="colorNormal" id="param_seed" style="position:  absolute;top: 69px;left: 71px;text-align:  center;width:  100px;color:#D77862;"></div>
+      <div class="blink" id="btn_param_seed" style="position: absolute;left: 65px;top: 107px;display:none;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/equip_param_seed.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/equip_param_seed.png"|filemtime}'></div>
+    </div>
+
+    <!--HPゲージ-->
+    <div style="position: absolute;left: 195px;top: 74px;">
+      <!--HPゲージ外枠-->
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_base.png"|filemtime}'></div>
+      <div style="position: absolute;left: 10px;top: 6px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/HP_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/HP_icon.png"|filemtime}'></div>
+
+      <!--HPゲージ本体ー-->
+      <div id="hp_gauge" style="position: absolute;left: 48px;top: 4px;">
+        <div style="position: absolute;left: 0px;top: -4px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_bg.png"|filemtime}'></div>
+        <div style="position: absolute;left: 7px;top: 0px;width:300px;">
+          <div style="position: relative;float:left;padding:  0px;margin:  0px;"><img id="hp_gauge_bar" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_gauge_bar.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_gauge_bar.png"|filemtime}' style="width: 277px;height: 28px;"></div>
+          <div style="position: relative;float:left;padding:  0px;margin:  0px;"><img id="hp_gauge_bar_top" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_gauge_bar_top.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_gauge_bar_top.png"|filemtime}' style="width: 14px;height: 28px;"></div>
+        </div>
+        <div style="position: absolute;left: 16px;top: 5px;color:#97ffa0;font-size: 1.2em;">HP</div>
+        <div style="position: absolute;left: 120px;top: 5px;color:#97ffa0;font-size: 1.2em;" id="hp_text">1000/1000</div>
+        <div style="position: absolute;left: 0px;top: -4px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_overrap.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_overrap.png"|filemtime}'></div>
+      </div>
+    </div>
+
+    <!--最強装備ボタン-->
+    <div style="position:absolute;left: 5px;top: 578px;" id="btn_change">
+      <div class="colorNormal" style="position: absolute;width: 174px;height: 66px;text-align: center;line-height: 67px;">最強装備</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_66.png"|filemtime}'>
+    </div>
+
+    <!--全装備解除ボタン-->
+    <div style="position:absolute;left: 566px;top: 578px;" id="btn_cloth_out">
+      <div class="colorNormal" style="position: absolute;width: 174px;height: 66px;text-align: center;line-height: 67px;">全装備解除</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_66.png"|filemtime}'>
+    </div>
+
+    <!--武器ステータス-->
+    <div style="position: absolute;top: 721px;left: 120px;">
+        <!--武器ステータス背景-->
+        <div><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_status_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_status_bg.png"|filemtime}'></div>
+        <!--武器ステータスアイコン-->
+        <div class="att1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att1.png"|filemtime}'></div>
+        <div class="att2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att2.png"|filemtime}'></div>
+        <div class="att3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att3.png"|filemtime}'></div>
+        <div class="spd-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_speed.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_speed.png"|filemtime}'></div>
+
+        <div class="def1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def1.png"|filemtime}'></div>
+        <div class="def2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def2.png"|filemtime}'></div>
+        <div class="def3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def3.png"|filemtime}'></div>
+        <div class="defX-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_defX.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_defX.png"|filemtime}'></div>
+
+        <div class="colorNearWhite att1-text" id="att1"></div>
+        <div class="colorNearWhite att2-text" id="att2"></div>
+        <div class="colorNearWhite att3-text" id="att3"></div>
+        <div class="colorNearWhite spd-text"  id="spd"></div>
+
+        <div class="colorNearWhite def1-text" id="def1"></div>
+        <div class="colorNearWhite def2-text" id="def2"></div>
+        <div class="colorNearWhite def3-text" id="def3"></div>
+        <div class="colorNearWhite defX-text" id="defX"></div>
+    </div>
+
+    <!--メッセージボタン-->
+    {if $starty.const.MESSAGE_ENABLE}
+    <div style="position:absolute;left: 3px;top: 819px;" id="btn_msg">
+      <div class="colorNormal" style="position: absolute;width: 174px;height: 66px;text-align: center;line-height: 67px;">メッセージ</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_66.png"|filemtime}'>
+    </div>
+    <div style="position:absolute;left: 0px;top: 819px;display:none;" id="batch_message"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/batch.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/batch.png"|filemtime}'></div>
+    {/if}
+
+    <!--仲間ボタン-->
+    <div style="position:absolute;left: 84px;top: 819px;" id="btn_member_list">
+      <div class="colorNormal" style="position: absolute;width: 174px;height: 66px;text-align: center;line-height: 67px;">仲間</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_66.png"|filemtime}'>
+    </div>
+    <div style="position:absolute;left: 84px;top: 819px;display:none;" id="batch_member"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/batch.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/batch.png"|filemtime}'></div>
+
+    <!--履歴ボタン-->
+    <div style="position:absolute;left: 286px;top: 819px;" id="btn_history_list">
+      <div class="colorNormal" style="position: absolute;width: 174px;height: 66px;text-align: center;line-height: 67px;">履歴</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_66.png"|filemtime}'>
+    </div>
+
+    <!--戦歴ボタン-->
+    <div style="position:absolute;left: 495px;top: 819px;" id="btn_battlelog">
+      <div class="colorNormal" style="position: absolute;width: 174px;height: 66px;text-align: center;line-height: 67px;">戦歴</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_66.png"|filemtime}'>
+    </div>
+
+    <div style="position: absolute;left: 10px;top:-14px;" id="paramup_panel">
+      <div style="position: absolute;left: 0px;top: 0px;display:none;" id="paramup1">
+        <div style="position: absolute;left: 0px;top: 0px;" id="paramup1_icon">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/item_sm/01201.png?{"`$smarty.const.MO_HTDOCS`/img/item_sm/01201.png"|filemtime}' style="width:60px"></div>
+          <div class="colorNearWhite" style="position: absolute;left: -21px;top: 62px;width: 100px;font-size: 1.2em;text-align:  center;font-weight: bold;" id="paramup1_expire">あと1個</div>
+        </div>
+      </div>
+
+      <div style="position: absolute;left: 0px;top: 0px;display:none;" id="paramup2">
+        <div style="position: absolute;left: 70px;top: 0px;" id="paramup2_icon">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/item_sm/01202.png?{"`$smarty.const.MO_HTDOCS`/img/item_sm/01202.png"|filemtime}' style="width:60px"></div>
+          <div class="colorNearWhite" style="position: absolute;left: -21px;top: 62px;width: 100px;font-size: 1.2em;text-align:  center;    font-weight: bold;" id="paramup2_expire">あと1個</div>
+        </div>
+      </div>
+
+      <div style="position: absolute;left: 0px;top: 0px;display:none;" id="paramup3">
+        <div style="position: absolute;left: 140px;top: 0px;" id="paramup3_icon">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/item_sm/01203.png?{"`$smarty.const.MO_HTDOCS`/img/item_sm/01203.png"|filemtime}' style="width:60px"></div>
+          <div class="colorNearWhite" style="position: absolute;left: -21px;top: 62px;width: 100px;font-size: 1.2em;text-align:  center;    font-weight: bold;"  id="paramup3_expire">あと1個</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="position: absolute;left: 559px;top:-14px; display:none;" id="effect_panel">
+      <div style="position: absolute;left: 0px;top: 0px;display:none;" id="effect_rare">
+        <div style="position: absolute;left: 0px;top: 0px;" id="effect_rare_icon">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/effect_icon_rareget.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/effect_icon_rareget.png"|filemtime}'></div>
+          <div class="colorNearWhite" style="position: absolute;left: -18px;top: 42px;width: 100px;font-size: 1.2em;text-align:  center;font-weight: bold;" id="effect_rare_expire">8時間</div>
+        </div>
+        <div style="position: absolute;left: -7px;top: 53px;display:none;" id="effect_rare_balloon">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/effect_balloon_rareget.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/effect_balloon_rareget.png"|filemtime}'></div>
+          <div class="colorNearWhite" style="position: absolute;left: 21px;top: 29px;width: 197px;color:#ff95ae;font-size: 1.2em;" id="effect_rare_text">レア敵遭遇率UP</div>
+        </div>
+      </div>
+
+      <div style="position: absolute;left: 0px;top: 0px;display:none;" id="effect_expup">
+        <div style="position: absolute;left: 60px;top: 0px;" id="effect_expup_icon">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/effect_icon_expup.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/effect_icon_expup.png"|filemtime}'></div>
+          <div class="colorNearWhite" style="position: absolute;left: -18px;top: 42px;width: 100px;font-size: 1.2em;text-align:  center;    font-weight: bold;" id="effect_expup_expire">8時間</div>
+        </div>
+        <div style="position: absolute;left: -7px;top: 53px;display:none;" id="effect_expup_balloon">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/effect_balloon_expup.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/effect_balloon_expup.png"|filemtime}'></div>
+          <div class="colorNearWhite" style="position: absolute;left: 21px;top: 29px;width: 197px;color:#1be5a0;font-size: 1.2em;" id="effect_expup_text">経験値UP</div>
+        </div>
+      </div>
+
+      <div style="position: absolute;left: 0px;top: 0px;display:none;" id="effect_dtech">
+        <div style="position: absolute;left: 120px;top: 0px;" id="effect_dtech_icon">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/effect_icon_dtech.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/effect_icon_dtech.png"|filemtime}'></div>
+          <div class="colorNearWhite" style="position: absolute;left: -18px;top: 42px;width: 100px;font-size: 1.2em;text-align:  center;    font-weight: bold;"  id="effect_dtech_expire">8時間</div>
+        </div>
+        <div style="position: absolute;left: -7px;top: 53px;display:none;" id="effect_dtech_balloon">
+          <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/effect_balloon_dtech.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/effect_balloon_dtech.png"|filemtime}'></div>
+          <div class="colorNearWhite" style="position: absolute;left: 21px;top: 29px;width: 197px;color:#d1a4ff;font-size: 1.2em;" id="effect_dtech_text">必殺技UP</div>
+        </div>
+      </div>
+
+    </div>
+
+      <!--ナビ-->
+      <div style="position: absolute;left: 0px;top: 0px;" id="navi_panel">
+          <canvas id="navi_sm_mypage" style="position:absolute;"></canvas>
+      </div>
+
+  </div>
+</div>

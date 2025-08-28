@@ -1,0 +1,40 @@
+  バトルランキングについて説明するのだ。<br /><br />
+
+  ユーザ対戦で獲得した階級ptを週ごとに集計して順位付けしてるのがバトルイベントなのだ｡<br /><br />
+
+  第{$smarty.const.BATTLE_RANK_WEEK}日曜日の0時から土曜23時59分59秒までがバトルイベント期間で､その期間毎日AM4:00に途中集計されるのだ｡次の日曜のAM4:00に最後の集計があって賞品が出るのだ!<br /><br />
+
+  ウィークリーランキングの方がバトルイベントで、デイリーランキングはその日のランキング成績集計なのだ。<br /><br />
+
+  {if $smarty.const.BTC_CAMPAIGN_START_DATE|strtotime <= $smarty.now && $smarty.const.BTC_CAMPAIGN_END_DATE|strtotime > $smarty.now}
+    現在、<span style="color: red;">{$smarty.const.BTC_CAMPAIGN_NAME}</span>中なのだ！！<br /><br />
+  {/if}
+
+  バトルイベントで上位に入るとアイテム{if $smarty.const.BTC_CAMPAIGN_START_DATE|strtotime <= $smarty.now && $smarty.const.BTC_CAMPAIGN_END_DATE|strtotime > $smarty.now}と<span style="color: red;">ビットコイン</span>{/if}がもらえちゃうのだ！<br />
+  <br /><br />
+
+  付与されるアイテム<br />
+  {foreach from=`$Ranking_Log_Prize_Week` key='index' item='rank' name='for'}
+    {if $smarty.foreach.for.iteration <= 22}
+        <div style="display: flex;align-items: center;margin-bottom: 10px;"><img src='img/item_sm/{$rank.id}.png' style="width: 90px;">{$smarty.foreach.for.iteration}位：{$rank.item_name}({$rank.set_name})</div>
+    {/if}
+  {/foreach}
+
+  <br>
+  ちなみに付与される部位に関してはバトルランキング開催ごとに武器⇒服⇒兜⇒アクセサリでローテーションになるのだ。
+  <br>
+  <br>
+
+  {if $smarty.const.BTC_CAMPAIGN_START_DATE|strtotime <= $smarty.now && $smarty.const.BTC_CAMPAIGN_END_DATE|strtotime > $smarty.now}
+  付与されるビットコイン<br />
+  {foreach from=`$Ranking_Log_Prize_Week` key='index' item='rank' name='for'}
+    {if $rank.btc > 0}
+      {assign var="btc" value=$rank.btc|string_format:"%.8f"}
+      {$smarty.foreach.for.iteration}位：{$btc|regex_replace:"/0+$/":""}BTC<br/>
+    {/if}
+  {/foreach}
+  {/if}<br /><br />
+
+また、入賞に漏れた人には参加賞として装備を修理できる<span style="color: red;">コヴァノンハンマー</span>を23位～100位以内の人にあげるのだ。<br /><br />
+
+あと、デイリーランキングで100位以内に入った人はバトルポイントが回復する<span style="color: red;">軍鶏の時計</span>をプレゼントするのだ！<br /><br />

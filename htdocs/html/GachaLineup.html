@@ -1,0 +1,67 @@
+<div id="content" style="width:739px;height: 733px;">
+  <div id="GachaLineupContents" >
+    <!--ウィンドウ背景-->
+    <div style="position:absolute;left: 5px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/popup_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/popup_window.png"|filemtime}'></div>
+
+    <!--タイトル-->
+    <div class="colorNormal" id="gacha_title" style="position:absolute;left: 120px;top: 18px;width:  500px;text-align:  center;"></div>
+    <div class="colorRed" id="gacha_title" style="position:absolute;font-size: 1em;left: 180px;top: 49px;">※提供割合は四捨五入等により100％にならない場合がございます</div>
+
+    <div class="scrollWrapper" style="position: absolute;margin-left: 34px;top: 70px;width: 690px;height: 551px;">
+      <div id="gacha-detail-list" style="position: absolute;">
+      </div>
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。装備用 -->
+    <div id="gacha-detail-template" key="root" style="position: relative;float: left;margin-top: 10px;margin-bottom: 16px;width: 700px;height: 239px; display:none;">
+        <!--ウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/gachalineup_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/gachalineup_window.png"|filemtime}'></div>
+
+        <div style="position: absolute;left: 45px;top: 100px;" ><img key="image" src="" style="width:90px;"></div>
+        <div class="colorNearWhite" style="position: absolute;font-size: 1em;left: 52px;top: 7px;width: 80px;text-align:center;" key="rate">0.000000%</div>
+        <div class="colorNormal" style="position: absolute;left: 214px;top: 58px;" key="setname"></div>
+        <div class="colorNormal" style="position: absolute;left: 632px;top: 18px;" ><img src="" key="reality"></div>
+        <div class="colorNormal" style="position: absolute;left: 632px;top: 58px;" key="durability"></div>
+        <div class="colorNearWhite" style="position: absolute;left: 162px;top: 16px;" key="name"></div>
+        <div class="colorNormal" style="position: absolute;left: 164px;top: 91px;width: 488px;" key="text">・・・・・・</div>
+
+        <!--武器ステータス-->
+        <div style="position: absolute;top: 146px;left: 161px;">
+            <!--武器ステータス背景-->
+            <div><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_status_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_status_bg.png"|filemtime}'></div>
+            <!--武器ステータスアイコン-->
+            <div class="att1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att1.png"|filemtime}'></div>
+            <div class="att2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att2.png"|filemtime}'></div>
+            <div class="att3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att3.png"|filemtime}'></div>
+            <div class="spd-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_speed.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_speed.png"|filemtime}'></div>
+
+            <div class="def1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def1.png"|filemtime}'></div>
+            <div class="def2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def2.png"|filemtime}'></div>
+            <div class="def3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def3.png"|filemtime}'></div>
+            <div class="defX-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_defX.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_defX.png"|filemtime}'></div>
+
+            <div class="colorNearWhite att1-text" key="att1"></div>
+            <div class="colorNearWhite att2-text" key="att2"></div>
+            <div class="colorNearWhite att3-text" key="att3"></div>
+            <div class="colorNearWhite spd-text"  key="spd"></div>
+
+            <div class="colorNearWhite def1-text" key="def1"></div>
+            <div class="colorNearWhite def2-text" key="def2"></div>
+            <div class="colorNearWhite def3-text" key="def3"></div>
+            <div class="colorNearWhite defX-text" key="defX"></div>
+        </div>
+
+    </div>
+
+    <!-- 空の場合のHTML。クローンされてリストの中に挿入される。 -->
+    <div id="no-entry" class="colorNormal" style="text-align:center; line-height: 20; display:none">
+      レコードがありません
+    </div>
+
+    <!--閉じるボタン-->
+    <div id="dialogue-close" style="position:absolute;left: 280px;top: 638px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 66px;">閉じる</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+  </div>
+</div>

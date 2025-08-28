@@ -1,0 +1,101 @@
+<div id="content" style="width:750px;height:846px; ">
+  <div id="GradeUserContents" >
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/user_battle_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_battle_window.png"|filemtime}'></div>
+
+    <!--ナビキャラセリフ-->
+    <div style="position: absolute;left: 35px;top: 32px;">
+      <div style="position: absolute;left: 0px;top: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/serifu_win.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/serifu_win.png"|filemtime}'></div>
+
+      <!--セリフ-->
+      <div class="colorNormal" id="navi_serif_grade_user" style="position:absolute;left: 137px;top: 24px;width: 400px;"></div>
+
+      <!--ナビキャラ-->
+      <div style="position: absolute;left: -10px;top: -20px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/navi.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/navi.png"|filemtime}'></div>
+    </div>
+
+    <!--スクロール領域-->
+    <div class="scrollWrapper" style="position: absolute;margin-left: 25px;top: 210px;width: 711px;height: 545px;">
+      <div id="gradeuser-list" style="position: absolute;">
+      </div>
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。 -->
+    <div id="gradeuser-template" key="root" style="position: relative;float:left; margin-left: 4px;margin-top: 13px;margin-bottom: 0px;width: 690px;height: 260px;display:none;">
+        <!--ウィンドウ背景-->
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/user_battle_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/user_battle_panel.png"|filemtime}'></div>
+
+        <!--ユーザー名-->
+        <div class="colorNearWhite" style="position: absolute;top: 15px;left: 30px;width: 300px;" key="user_name" ></div>
+        <!--ユーザーアイコン-->
+        <div style="position:absolute;left: 28px;top: 210px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/shadowx3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shadowx3.png"|filemtime}'></div>
+        <div style="position:absolute;left: 13px;top: 28px;"><img src='' key="icon" style="width:180px;"></div>
+
+        <!--仲間数-->
+        <div class="colorNearWhite" style="position: absolute;top: 15px;left: 575px;width: 50px;text-align:  right;" key="member" ></div>
+
+        <!--アバター名-->
+        <div class="colorNormal" style="position: absolute;top: 63px;left: 178px;width: 300px;" key="player_name" ></div>
+
+        <!--レベル-->
+        <div class="colorNormal" style="position: absolute;top: 102px;left: 221px;width: 50px;text-align:  right;" key="level" ></div>
+
+        <!--階級-->
+        <div class="colorNormal" style="position: absolute;top: 102px;left: 317px;width: 300px;" key="grade" ></div>
+
+        <!--HPゲージ-->
+        <div style="position: absolute;left: 175px;top: 149px;">
+          <div style="position: absolute;left: 0px;top: 0x;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/HP_icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/HP_icon.png"|filemtime}'></div>
+          <!--HPゲージ本体ー-->
+          <div key="hp_gauge" style="position: absolute;left: 45px;top: -3px;">
+            <div style="position: absolute;left: 0px;top: -4px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_bg.png"|filemtime}'></div>
+            <div style="position: absolute;left: 7px;top: 0px;width:300px;">
+              <div style="position: relative;float:left;padding:  0px;margin:  0px;"><img key="hp_gauge_bar" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_gauge_bar.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_gauge_bar.png"|filemtime}' style="width: 277px;height: 28px;"></div>
+              <div style="position: relative;float:left;padding:  0px;margin:  0px;"><img key="hp_gauge_bar_top" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_gauge_bar_top.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_gauge_bar_top.png"|filemtime}' style="width: 14px;height: 28px;"></div>
+            </div>
+            <div style="position: absolute;left: 16px;top: 5px;color:#97ffa0;font-size: 1.2em;">HP</div>
+            <div style="position: absolute;left: 120px;top: 5px;color:#97ffa0;font-size: 1.2em;" key="hp_text">1000/1000</div>
+            <div style="position: absolute;left: 0px;top: -4px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/hp_overrap.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/hp_overrap.png"|filemtime}'></div>
+          </div>
+        </div>
+
+        <!--対戦ボタン-->
+        <div style="position:absolute;left: 521px;top: 65px;" key="battle_button">
+          <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_userbattle.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_userbattle.png"|filemtime}'>
+        </div>
+
+        <!--武器ステータス-->
+        <div style="position: absolute;top: 186px;left: 161px;">
+            <!--武器ステータス背景-->
+            <div><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_status_bg.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_status_bg.png"|filemtime}'></div>
+            <!--武器ステータスアイコン-->
+            <div class="att1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att1.png"|filemtime}'></div>
+            <div class="att2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att2.png"|filemtime}'></div>
+            <div class="att3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_att3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_att3.png"|filemtime}'></div>
+            <div class="spd-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_speed.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_speed.png"|filemtime}'></div>
+
+            <div class="def1-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def1.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def1.png"|filemtime}'></div>
+            <div class="def2-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def2.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def2.png"|filemtime}'></div>
+            <div class="def3-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_def3.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_def3.png"|filemtime}'></div>
+            <div class="defX-icon"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/picon_defX.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/picon_defX.png"|filemtime}'></div>
+
+            <div class="colorNearWhite att1-text" key="att1">1000</div>
+            <div class="colorNearWhite att2-text" key="att2">1000</div>
+            <div class="colorNearWhite att3-text" key="att3">1000</div>
+            <div class="colorNearWhite spd-text"  key="spd">1000</div>
+
+            <div class="colorNearWhite def1-text" key="def1">1000</div>
+            <div class="colorNearWhite def2-text" key="def2">1000</div>
+            <div class="colorNearWhite def3-text" key="def3">1000</div>
+            <div class="colorNearWhite defX-text" key="defX">1000</div>
+        </div>
+    </div>
+
+    <!--戻るボタン-->
+    <div id="grade_user_close" style="position:absolute;left: 258px;top: 760px;">
+      <div class="colorNormal" style="position: absolute;width:254px;height:66px;text-align: center;line-height: 66px;">戻る</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_254_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_254_66.png"|filemtime}'>
+    </div>
+
+  </div>
+</div>

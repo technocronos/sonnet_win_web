@@ -1,0 +1,32 @@
+<div id="content" style="width:732px;height: 660px;">
+  <div id="MonsterFilterContents" >
+    <!--ナビゲーター-->
+    <div style="position: absolute;top: 45px;left: 140px;">
+      <div style="position: absolute;top: 0px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/monster_list_hr.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/monster_list_hr.png"|filemtime}'></div>
+      <div class="colorLiteBlue2" style="position: absolute;top: 29px;left: 123px;width:  500px;" id="filter_navigator"></div>
+    </div>
+
+    <!--絞り込みボタン-->
+    <div id="btn_calcel" style="position:absolute;top: 44px;left: 13px;">
+      <div class="colorNormal" style="position: absolute; width:174px; height:74px; text-align: center;line-height: 74px;">キャンセル</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;top: 113px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/filter_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/filter_window.png"|filemtime}'></div>
+
+    <div class="scrollWrapper" style="position: absolute;margin-left: 12px;top: 114px;width: 720px;height: 662px;">
+      <div id="filter-list" style="position: absolute;">
+      </div>
+    </div>
+
+    <!-- エントリテンプレート。クローンされてリストに中に挿入される。装備用 -->
+    <div id="filter-template" key="root" style="position: relative;float: left; margin-left: 5px; margin-bottom: 0px;margin-top: 19px;width:346px;height: 77px;display:none;">
+        <div style="position: absolute;left: 0px;top: 0px;" key="btn">
+            <div style="position: absolute;left: 0px;top: 0px;"><img key="panel" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/monster_filter.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/monster_filter.png"|filemtime}'></div>
+            <div class="colorNormal" style="position: absolute;text-align:  center;left: 63px;top: 25px;width: 266px;letter-spacing:0px;" key="text"></div>
+        </div>
+    </div>
+
+  </div>
+</div>

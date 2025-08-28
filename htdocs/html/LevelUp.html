@@ -1,0 +1,46 @@
+<div id="content" style="width:724px; height:814px;">
+  <div id="levelUpContents" >
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/sync_result_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/sync_result_window.png"|filemtime}'></div>
+    <!--エフェクト-->
+    <div style="position: absolute; top: -248px; clip: rect(258px 750px 761px 0px);"><img id="rorate_image" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/rotate_effect.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/rotate_effect.png"|filemtime}'></div>
+    <!--ウィンドウカバー-->
+    <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/battle_result_popup.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/battle_result_popup.png"|filemtime}'></div>
+
+    <!--タイトル-->
+    <div style="position: absolute;top: -12px;left: 44px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/levelup_panel.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/levelup_panel.png"|filemtime}'></div>
+
+    <!--レベルアップ-->
+    <div id="level_text" style="position: absolute;top: 112px;left: 237px;color:#b8feff;font-size: 2.5em;"></div>
+
+    <!--波紋用div-->
+    <div id="circle_div"></div>
+    <div id="circle_div2"></div>
+
+    <div class="colorRed" id="att1" style="position: absolute;top: 226px;left: 400px;text-align:  right;width:  50px;"></div>
+    <div class="colorRed" id="att2" style="position: absolute;top: 261px;left: 400px;text-align:  right;width:  50px;"></div>
+    <div class="colorRed" id="att3" style="position: absolute;top: 295px;left: 400px;text-align:  right;width:  50px;"></div>
+    <div class="colorRed" id="def1" style="position: absolute;top: 332px;left: 400px;text-align:  right;width:  50px;"></div>
+    <div class="colorRed" id="def2" style="position: absolute;top: 363px;left: 400px;text-align:  right;width:  50px;"></div>
+    <div class="colorRed" id="def3" style="position: absolute;top: 398px;left: 400px;text-align:  right;width:  50px;"></div>
+    <div class="colorRed" id="spd" style="position: absolute;top: 432px;left: 400px;text-align:  right;width:  50px;"></div>
+    <div class="colorRed" id="hp_max" style="position: absolute;top: 462px;left: 400px;text-align:  right;width:  50px;"></div>
+
+    <div id="param_seed_panel" style="position: absolute;top: 537px;left: 126px;display:none;">
+        <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/levelup_statusget.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/levelup_statusget.png"|filemtime}'></div>
+        <div class="colorRed" id="param_seed" style="position: absolute;top: 22px;left: 154px;width: 100px;text-align: center;font-size: 3em; font-weight: bold;"></div>
+    </div>
+
+    <div id="param-seed-btn" style="position:absolute;left: 500px;top: 548px;display:none;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">振り分け</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+    <!--OKボタン-->
+    <div id="levelup-close" style="position:absolute;left: 278px;top: 718px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">閉じる</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+  </div>
+</div>

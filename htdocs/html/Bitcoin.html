@@ -1,0 +1,101 @@
+<div id="content" style="width:750px;">
+  <div id="BitcoinContents" style="position: absolute;">
+
+  <!--背景-->
+  <div id="bg_image" style="position: absolute;top:-100px;left: -13px;"></div>
+
+  <div id="bitcoindiv" style="position: absolute;width:750px;height:1100px;">
+  <!--ウィンドウ背景-->
+    <div style="position: absolute;top: 100px;left: 0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/help_detail_balloon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/help_detail_balloon.png"|filemtime}' style="height: 963px;width: 727px;"></div>
+
+    <!--タイトル背景-->
+    <div style="position: absolute;top: 0px;left: 25px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/help_detail_title.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/help_detail_title.png"|filemtime}'></div>
+    <!--アイコン-->
+    <div style="position: absolute;top: 21px;left: 109px;"><img style="width: 50px;" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/bitcoin-icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/bitcoin-icon.png"|filemtime}'></div>
+    <!--アイコン-->
+    <div style="position: absolute;top: 23px;left: 565px;"><img style="width: 50px;" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/bitcoin-icon.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/bitcoin-icon.png"|filemtime}'></div>
+    <!--タイトル-->
+    <div class="colorWhite" style="position: absolute;margin-left: 220px;top: 37px;text-align:  center;width:  314px;">ビットコイン</div>
+
+    <div style="position: absolute;margin-left: 30px;top: 137px;width: 673px;height: 658px;">
+        <div class="colorNormal" style="position: absolute;font-size:32px;color: red;letter-spacing:0px;">現在の残高:<span id="btc_amount"></span>BTC</div>
+    </div>
+
+    <!--出金履歴ボタン-->
+    <div id="btn_getlog" style="position:absolute;left: 535px;top: 119px;">
+      <div class="colorNormal" style="position: absolute; width:174px; height:66px; text-align: center;line-height: 66px;">取得ログ</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}/img/parts/sp/btn_flame_174_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_66.png"|filemtime}'>
+    </div>
+
+
+    <div style="position: absolute;margin-left: 30px;top: 201px;width: 673px;">
+        <div class="colorNormal" style="position: absolute;font-size:2em;letter-spacing:0px;">受取先ウォレットアドレス</div>
+        <div class="colorRed" style="position: absolute;top: 43px;">
+            <input type="text" id="address" style="width:620px;height:46px;font-size:1.2em">
+        </div>
+    </div>
+
+    <div style="position: absolute;margin-left: 30px;top: 326px;width: 673px;">
+        <div class="colorRed" style="position: absolute;top: 0px;font-size: 22px;letter-spacing: 2px;line-height: 31px;">
+        ※出金は全額になります<br>
+        ※送金手数料は<span id="vcoin_fee"></span>BTCになります<br>
+        ※送金手数料はユーザー様のご負担となりますのでご了承ください<br>
+        ※<span id="vcoin_minimam"></span>BTC以下の出金はできません<br>
+        ※{$smarty.const.VCOIN_MINIMAM_PAYMENT}円以上の課金が無いと出金できません<br>
+        ※キャンペーンは期間前でも運営のビットコインが無くなり次第、終了する可能性があります<br>
+        ※プレイログと整合性が取れない場合は出金できません<br>
+        ※ビットコインは最後に取得した日から出金せずに180日経つと消滅します<br>
+        </div>
+    </div>
+
+    <div style="position: absolute;margin-left: 30px;top: 624px;width: 673px;">
+        <div class="colorNormal" style="position: absolute;font-size:2em">ビットコインについてのヘルプ</div>
+
+        <div id="btn_help1" style="position:absolute;left: 20px;top: 50px;">
+          <div class="colorNormal" style="position: absolute;top: 14px;margin-left: 10px;font-size: 1.5em;">Bitcoinを集めよう</div>
+          <img src="{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_text_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_text_base.png"|filemtime}" style="width: 620px;height: 50px;">
+        </div>
+
+        <div id="btn_help2" style="position:absolute;left: 20px;top: 113px;">
+          <div class="colorNormal" style="position: absolute;top: 14px;font-size: 1.5em;margin-left: 10px;">Bitcoinを受け取るには</div>
+          <img src="{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_text_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_text_base.png"|filemtime}" style="width: 620px;height: 50px;">
+        </div>
+
+        <div id="btn_help3" style="position:absolute;left: 20px;top: 173px;">
+          <div class="colorNormal" style="position: absolute;top: 14px;font-size: 1.5em;margin-left: 10px;">Bitcoinを受け取る手順</div>
+          <img src="{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_text_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_text_base.png"|filemtime}" style="width: 620px;height: 50px;">
+        </div>
+
+        <div id="btn_help4" style="position:absolute;left: 20px;top: 233px;">
+          <div class="colorNormal" style="position: absolute;top: 14px;font-size: 1.5em;margin-left: 10px;">Bitcoinを受け取る注意点</div>
+          <img src="{$smarty.const.APP_WEB_ROOT}img/parts/sp/shop_text_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/shop_text_base.png"|filemtime}" style="width: 620px;height: 50px;">
+        </div>
+
+    </div>
+
+    <!--閉じるボタン-->
+    <div id="bitcoin-close" style="position:absolute;left: 60px;top: 950px;">
+      <div class="colorNormal" style="position: absolute; width:174px; height:66px; text-align: center;line-height: 66px;">閉じる</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}/img/parts/sp/btn_flame_174_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_66.png"|filemtime}'>
+    </div>
+
+    <!--出金履歴ボタン-->
+    <div id="btn_list" style="position:absolute;left: 265px;top: 950px;">
+      <div class="colorNormal" style="position: absolute; width:174px; height:66px; text-align: center;line-height: 66px;">出金履歴</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}/img/parts/sp/btn_flame_174_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_66.png"|filemtime}'>
+    </div>
+
+    <!--出金依頼ボタン-->
+    {if BTC_CAMPAIGN_PAYMENT_STOP == false}
+    <div id="bitcoin-send" style="position:absolute;left: 470px;top: 950px;">
+      <div class="colorNormal" style="position: absolute; width:174px; height:66px; text-align: center;line-height: 66px;">出金依頼</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}/img/parts/sp/btn_flame_174_66.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_66.png"|filemtime}'>
+    </div>
+    {else}
+    <div style="position:absolute;left: 470px;top: 950px;">
+        <img src='{$smarty.const.APP_WEB_ROOT}/img/parts/sp/payment_stop_notice.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/payment_stop_notice.png"|filemtime}'>
+    </div>
+    {/if}
+  </div>
+
+</div>

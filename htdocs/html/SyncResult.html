@@ -1,0 +1,43 @@
+<div id="content" style="width:724px; height:743px">
+  <div id="ItemUseContents" >
+    <!--ウィンドウ背景-->
+    <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/sync_result_window.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/sync_result_window.png"|filemtime}'></div>
+    <!--エフェクト-->
+    <div style="position: absolute; top: -248px; clip: rect(248px 750px 761px 0px);"><img id="rorate_image" src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/rotate_effect.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/rotate_effect.png"|filemtime}'></div>
+    <!--ウィンドウカバー-->
+    <div style="position: absolute;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/sync_result_cover.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/sync_result_cover.png"|filemtime}'></div>
+
+    <!--タイトル-->
+    <div style="position: absolute;top: -12px;left: 176px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/syncresult_title.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/syncresult_title.png"|filemtime}'></div>
+
+    <!--波紋用div-->
+    <div id="circle_div"></div>
+    <div id="circle_div2"></div>
+
+    <!--装備アイコン-->
+    <div id="weapon_area" style="position: absolute;top: 53px;left: 277px;width: 175px;height: 173px;">
+      <!--装備アイコン背景-->
+      <div><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/weapon_image_back.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/weapon_image_back.png"|filemtime}' style="width: 175px;height: 173px;"></div>
+      <!--装備イメージ-->
+      <div style="position: absolute;top: 38px;left: 42px;"><img id='item_image' src='' style="width: 90px;"></div>
+    </div>
+
+    <!--レベルアップ-->
+    <div id="revelup_panel" style="position: absolute;top: 200px;left: 114px;width: 300px;">
+      <!--レベルアップ背景-->
+      <div style="position:  absolute;top: 0px;left:  0px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/sync_result_base.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/sync_result_base.png"|filemtime}'></div>
+      <!--レベルアップ文字-->
+      <div style="position:  absolute;top: 35px;left: 101px;"><img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/LVUP.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/LVUP.png"|filemtime}'></div>
+    </div>
+
+    <!--テキスト-->
+    <div class="colorWhite" id="result_text" style="position: absolute;top: 363px;left: 40px;width: 649px;color: #ebd4d4;" ></div>
+
+    <!--OKボタン-->
+    <div id="sync-result-close" style="position:absolute;left: 278px;top: 659px;">
+      <div class="colorNormal" style="position: absolute;width:174px;height:74px;text-align: center;line-height: 74px;">OK</div>
+      <img src='{$smarty.const.APP_WEB_ROOT}img/parts/sp/btn_flame_174_74.png?{"`$smarty.const.MO_HTDOCS`/img/parts/sp/btn_flame_174_74.png"|filemtime}'>
+    </div>
+
+  </div>
+</div>
