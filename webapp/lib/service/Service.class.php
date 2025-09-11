@@ -173,7 +173,7 @@ class Service {
         $result = ResultsetUtil::keyShift($mergeSet, $this->primaryKey);
 
         // 指定されたレコードがすべてとれているならここでリターン。
-        if(count($mergeSet) == $pks)
+        if(count($mergeSet) == count((array)($pks ?: [])))
             return $result;
 
         // とれなかったレコードをnullとして補う。
@@ -312,7 +312,7 @@ class Service {
             $update = $record;
 
             // 指定されたレコードから主キー列を取り除く。
-            foreach((array)$this->primaryKey as $key)
+            foreach((array)($this->primaryKey ?: []) as $key)
                 unset($update[$key]);
 
             // 引数で指定された、UPDATE時の列値をマージ。
@@ -324,7 +324,7 @@ class Service {
             }
 
             // UPDATE。更新行があるなら終了。
-            if(count((array)$this->primaryKey) == count($pk)) {
+            if(count((array)($this->primaryKey ?: [])) == count((array)($pk ?: []))) {
                 if($this->updateRecord($pk, $update))
                     return;
             }
@@ -803,7 +803,7 @@ class Service {
         }
 
         // 単一主キーならその値を、複数主キーなら配列で返す。
-        return (count($pk) == 1) ? $pk[0] : $pk;
+        return (count((array)($pk ?: [])) == 1) ? $pk[0] : $pk;
     }
 
 
