@@ -5,15 +5,15 @@
             "id": 12002000
           , "battle_bg": "dungeon"
           , "environment": "cave"
-          , "start_pos": [1, 12]
+          , "start_pos": [6, 16]
           , "start_pos_on": {
-                "goto_passage1_from_main":  [13, 8]
+                "goto_passage1_from_main":  [18, 12]
             }
           , "gimmicks": {
                 "shortcut_from_start": {
                     "condition": {"cleared":true}
                   , "trigger": "hero"
-                  , "pos": [1, 8]
+                  , "pos": [6, 12]
                   , "type": "goto"
                   , "room": "main"
                   , "ornament": "goto2"
@@ -21,7 +21,7 @@
 
               , "branch": {
                     "trigger": "hero"
-                  , "pos":[0,3], "rb":[6,10]
+                  , "pos":[5,7], "rb":[11,14]
                   , "condition": {"cleared":false}
                   , "type": "lead"
                   , "leads": [
@@ -31,23 +31,23 @@
                     ]
                 }
               , "torch1": {
-                    "pos": [3, 7]
+                    "pos": [8, 11]
                   , "ornament": "torch"
                 }
               , "torch2": {
-                    "pos": [10, 9]
+                    "pos": [15, 13]
                   , "ornament": "torch"
                 }
               , "fungi1": {
-                    "pos": [9, 2]
+                    "pos": [14, 6]
                   , "ornament": "fungi2"
                 }
               , "fungi2": {
-                    "pos": [13, 1]
+                    "pos": [18, 5]
                   , "ornament": "fungi"
                 }
               , "fungi3": {
-                    "pos": [12, 10]
+                    "pos": [17, 14]
                   , "ornament": "fungi"
                 }
               , "mission": {
@@ -62,10 +62,10 @@
                 }
               , "passage_patrol": {
                     "trigger": "hero"
-                  , "pos":[11,7], "rb":[14,11]
+                  , "pos":[16,11], "rb":[19,15]
                   , "type": "unit"
                   , "unit": {
-                        "pos": [13, 8]
+                        "pos": [18, 12]
                       , "character_id":-1102
                       , "icon":"shadow"
                     }
@@ -82,14 +82,14 @@
                 }
               , "goto_main_from_passage1": {
                     "trigger": "hero"
-                  , "pos": [14, 8]
+                  , "pos": [19, 12]
                   , "type": "goto"
                   , "room": "main"
                   , "ornament": "goto"
                 }
               , "depths": {
                     "trigger": "hero"
-                  , "pos": [13, 0]
+                  , "pos": [18, 4]
                   , "ornament": "goto"
                   , "one_shot": 120020201
                   , "type": "lead"
@@ -101,10 +101,10 @@
                 }
               , "passage_patrol2": {
                     "trigger": "hero"
-                  , "pos":[9,0], "rb":[14,5]
+                  , "pos":[14,4], "rb":[19,9]
                   , "type": "unit"
                   , "unit": {
-                        "pos": [13, 1]
+                        "pos": [18, 5]
                       , "character_id":-1102
                       , "icon":"shadow"
                     }
@@ -121,7 +121,7 @@
                 }
               , "treasure5": {
                     "trigger": "player"
-                  , "pos":[11,2]
+                  , "pos":[16,6]
                   , "ornament": "twinkle"
                   , "type": "treasure"
                   , "item_id": 12004
@@ -129,7 +129,7 @@
                 }
               , "treasure6": {
                     "trigger": "player"
-                  , "pos":[13,9]
+                  , "pos":[18,13]
                   , "ornament": "twinkle"
                   , "type": "treasure"
                   , "item_id": 1905
@@ -141,18 +141,18 @@
             "id": 12002003
           , "battle_bg": "dungeon"
           , "environment": "cave"
-          , "start_pos": [1,14]
+          , "start_pos": [7,20]
           , "gimmicks": {
                 "goto_passage1_from_main": {
                     "trigger": "hero"
-                  , "pos": [0,14]
+                  , "pos": [6,20]
                   , "type": "goto"
                   , "room": "start"
                   , "ornament": "goto"
                 }
               , "goto_backdoor_from_main": {
                     "trigger": "hero"
-                  , "pos": [15,6]
+                  , "pos": [21,12]
                   , "type": "goto"
                   , "room": "backdoor"
                   , "ornament": "goto"
@@ -160,7 +160,7 @@
               , "dark_curtain": {
                     "condition": {"cleared":false}
                   , "trigger": "hero"
-                  , "pos":[2,12], "rb":[5,15]
+                  , "pos":[8,18], "rb":[11,21]
                   , "type": "lead"
                   , "leads": [
                         "LINES %avatar% この奥よく見えないなぁ…"
@@ -183,7 +183,7 @@
                   , "curtain": "living"
                   , "type": "unit"
                   , "unit": {
-                        "pos": [4, 6]
+                        "pos": [10, 12]
                       , "character_id":-1102
                       , "icon":"shadow"
                     }
@@ -192,7 +192,7 @@
               , "living_goblin2": {
                     "type": "unit"
                   , "unit": {
-                        "pos": [5, 7]
+                        "pos": [11, 13]
                       , "character_id":-1102
                       , "icon":"shadow"
                     }
@@ -201,7 +201,7 @@
               , "living_goblin3": {
                     "type": "unit"
                   , "unit": {
-                        "pos": [5, 6]
+                        "pos": [11, 12]
                       , "character_id":-1301
                       , "items": [-2001]
                       , "icon":"shadow2"
@@ -220,10 +220,10 @@
 
               , "passage_goblin": {
                     "trigger": "player"
-                  , "pos":[9,10], "rb":[11,12]
+                  , "pos":[15,16], "rb":[17,18]
                   , "type": "unit"
                   , "unit": {
-                        "pos":[11,10]
+                        "pos":[17,16]
                       , "character_id":-1102
                       , "icon":"shadow"
                     }
@@ -240,10 +240,10 @@
 
               , "close_goblin": {
                     "trigger": "player"
-                  , "pos":[11,6], "rb":[13,9]
+                  , "pos":[17,12], "rb":[19,15]
                   , "type": "unit"
                   , "unit": {
-                        "pos":[14,6]
+                        "pos":[20,12]
                       , "character_id":-1301
                       , "items": [-2001]
                       , "icon":"shadow2"
@@ -256,7 +256,7 @@
                   , "curtain": "storage1"
                   , "type": "unit"
                   , "unit": {
-                        "pos": [10,15]
+                        "pos": [16,21]
                       , "character_id":-1102
                       , "icon":"shadow"
                     }
@@ -268,7 +268,7 @@
                   , "type": "unit"
                   , "unit": {
                         "code": "alerter"
-                      , "pos": [8,4]
+                      , "pos": [14,10]
                       , "character_id":-1301
                       , "icon":"shadow2"
                     }
@@ -285,7 +285,7 @@
               , "helper_goblins1": {
                     "type": "unit"
                   , "unit": {
-                        "pos": [2,13]
+                        "pos": [8,19]
                       , "character_id":-1102
                       , "icon":"shadow"
                     }
@@ -294,7 +294,7 @@
               , "helper_goblins2": {
                     "type": "unit"
                   , "unit": {
-                        "pos": [1,13]
+                        "pos": [7,19]
                       , "character_id":-1301
                       , "items": [-2001]
                       , "icon":"shadow2"
@@ -304,7 +304,7 @@
               , "helper_goblins3": {
                     "type": "unit"
                   , "unit": {
-                        "pos": [2,14]
+                        "pos": [8,20]
                       , "character_id":-1301
                       , "items": [-2001]
                       , "icon":"shadow2"
@@ -321,7 +321,7 @@
                 }
               , "treasure1": {
                     "trigger": "player"
-                  , "pos":[2,6]
+                  , "pos":[8,12]
                   , "ornament": "twinkle"
                   , "type": "treasure"
                   , "item_id": 14003
@@ -329,7 +329,7 @@
                 }
               , "treasure2": {
                     "trigger": "player"
-                  , "pos":[9,16]
+                  , "pos":[15,22]
                   , "ornament": "twinkle"
                   , "type": "treasure"
                   , "gold": 170
@@ -337,7 +337,7 @@
                 }
               , "treasure3": {
                     "trigger": "player"
-                  , "pos":[10,3]
+                  , "pos":[16,9]
                   , "ornament": "twinkle"
                   , "type": "treasure"
                   , "item_id": 1902
@@ -357,7 +357,7 @@
               , "mission_item1": {
                     "condition": {"mission":true}
                   , "trigger": "player"
-                  , "pos":[6,7]
+                  , "pos":[12,13]
                   , "type": "x_mission"
                   , "memory_shot": "mission_item1"
                   , "ornament": "twinkle"
@@ -365,33 +365,33 @@
               , "mission_item2": {
                     "condition": {"mission":true}
                   , "trigger": "player"
-                  , "pos":[8,5]
+                  , "pos":[14,11]
                   , "type": "x_mission"
                   , "memory_shot": "mission_item2"
                   , "ornament": "twinkle"
                 }
               , "torch1": {
-                    "pos": [2, 11]
+                    "pos": [8, 17]
                   , "ornament": "torch"
                 }
               , "torch2": {
-                    "pos": [5, 11]
+                    "pos": [11, 17]
                   , "ornament": "torch"
                 }
               , "torch3": {
-                    "pos": [3, 7]
+                    "pos": [9, 13]
                   , "ornament": "torch"
                 }
               , "fungi1": {
-                    "pos": [1, 9]
+                    "pos": [7, 15]
                   , "ornament": "fungi2"
                 }
               , "fungi2": {
-                    "pos": [11, 12]
+                    "pos": [17, 18]
                   , "ornament": "fungi"
                 }
               , "fungi3": {
-                    "pos": [5, 14]
+                    "pos": [11, 20]
                   , "ornament": "fungi"
                 }
             }
@@ -401,11 +401,11 @@
             "id": 12002004
           , "battle_bg": "dungeon"
           , "environment": "cave"
-          , "start_pos": [0,4]
+          , "start_pos": [6,10]
           , "gimmicks": {
                 "goal": {
                     "trigger": "hero"
-                  , "pos":[3,15], "rb":[4,15]
+                  , "pos":[9,21], "rb":[10,21]
                   , "type": "goal"
                   , "ornament": "goto2"
                 }
@@ -423,7 +423,7 @@
               , "find_goal": {
                     "condition": {"cleared":false}
                   , "trigger": "hero"
-                  , "pos":[3,9], "rb":[4,14]
+                  , "pos":[9,15], "rb":[10,20]
                   , "type": "lead"
                   , "leads": [
                         "LINES %avatar% あれ？外だ"
@@ -432,7 +432,7 @@
                     ]
                 }
               , "torch3": {
-                    "pos": [9, 8]
+                    "pos": [15, 14]
                   , "ornament": "torch"
                 }
 
@@ -441,7 +441,7 @@
                   , "curtain": "water"
                   , "type": "unit"
                   , "unit": {
-                        "pos": [8,7]
+                        "pos": [14,13]
                       , "character_id":-1102
                       , "icon":"shadow"
                     }
@@ -457,7 +457,7 @@
                 }
               , "treasure4": {
                     "trigger": "player"
-                  , "pos":[7,6]
+                  , "pos":[13,12]
                   , "ornament": "twinkle"
                   , "type": "treasure"
                   , "item_id": 1201
@@ -465,7 +465,7 @@
                 }
               , "treasure4-2": {
                     "trigger": "player"
-                  , "pos":[9,10]
+                  , "pos":[15,16]
                   , "ornament": "twinkle"
                   , "type": "treasure"
                   , "item_id": 1902
@@ -476,7 +476,7 @@
                   , "rotation": 2
                   , "type": "unit"
                   , "unit": {
-                        "pos": [0,4]
+                        "pos": [6,10]
                       , "character_id":-1102
                       , "icon":"shadow"
                     }
@@ -495,7 +495,7 @@
                   , "rotation": 3
                   , "type": "unit"
                   , "unit": {
-                        "pos": [0,4]
+                        "pos": [6,10]
                       , "character_id":-1102
                       , "icon":"shadow"
                     }
@@ -505,7 +505,7 @@
                   , "rotation": 4
                   , "type": "unit"
                   , "unit": {
-                        "pos": [1,4]
+                        "pos": [7,10]
                       , "character_id":-1301
                       , "items": [-2001]
                       , "icon":"shadow2"
@@ -515,28 +515,28 @@
               , "chaser4": {
                     "type": "unit"
                   , "unit": {
-                        "pos": [0,4]
+                        "pos": [6,10]
                       , "character_id":-1301
                       , "items": [-2001]
                       , "icon":"shadow2"
                     }
                 }
               , "fungi1": {
-                    "pos": [3, 10]
+                    "pos": [9, 16]
                   , "ornament": "fungi2"
                 }
               , "fungi2": {
-                    "pos": [3, 11]
+                    "pos": [9, 17]
                   , "ornament": "fungi2"
                 }
               , "fungi3": {
-                    "pos": [9, 9]
+                    "pos": [15, 15]
                   , "ornament": "fungi"
                 }
               , "mission_item3": {
                     "condition": {"mission":true}
                   , "trigger": "player"
-                  , "pos":[8,10]
+                  , "pos":[14,16]
                   , "type": "x_mission"
                   , "memory_shot": "mission_item3"
                   , "ornament": "twinkle"
