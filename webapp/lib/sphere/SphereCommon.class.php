@@ -437,9 +437,11 @@ class SphereCommon {
     public function getUnitByCode($code = 'avatar') {
 
         // プレイヤーアバターユニットを探す。
-        foreach($this->units as $unit) {
-            if($unit->getCode() == $code)
-                return $unit;
+        if (is_array($this->units)) {
+            foreach($this->units as $unit) {
+                if($unit->getCode() == $code)
+                    return $unit;
+            }
         }
 
         // 見つからなかったらnullを返す。
@@ -457,12 +459,14 @@ class SphereCommon {
         $result = array();
 
         // ユニットを一つずつ見ていく。
-        foreach($this->units as $no => $unit) {
+        if (is_array($this->units)) {
+            foreach($this->units as $no => $unit) {
 
-            // コードネームを持っているものを見つけたら、戻り値に追加。
-            $code = $unit->getCode();
-            if($code)
-                $result[$code] = $no;
+                // コードネームを持っているものを見つけたら、戻り値に追加。
+                $code = $unit->getCode();
+                if($code)
+                    $result[$code] = $no;
+            }
         }
 
         // リターン。
@@ -689,9 +693,11 @@ class SphereCommon {
         // コード "avatar"、あるいは "room_takeover" フラグが ON になっているユニットを引き継ぐ。
         // コード "avatar" を見ているのは下位互換のため。
         $result = array();
-        foreach($this->units as $no => $unit) {
-            if($unit->getProperty('room_takeover')  ||  $unit->getCode() == 'avatar')
-                $result[$no] = $unit;
+        if (is_array($this->units)) {
+            foreach($this->units as $no => $unit) {
+                if($unit->getProperty('room_takeover')  ||  $unit->getCode() == 'avatar')
+                    $result[$no] = $unit;
+            }
         }
 
         return $result;
@@ -1486,10 +1492,12 @@ class SphereCommon {
         }
 
         // 開始直後の位置が暗幕の場合は解除を行う。
-        foreach($this->units as $unit) {
-            if( $unit->getProperty('player_owner') ) {
-                foreach($this->map->findCurtainOn($unit->getPos()) as $curtainName)
-                    $this->openCurtain($leads, $curtainName, $unit);
+        if (is_array($this->units)) {
+            foreach($this->units as $unit) {
+                if( $unit->getProperty('player_owner') ) {
+                    foreach($this->map->findCurtainOn($unit->getPos()) as $curtainName)
+                        $this->openCurtain($leads, $curtainName, $unit);
+                }
             }
         }
 
@@ -2990,8 +2998,10 @@ class SphereCommon {
 
         // ユニット配列を保存可能なデータに変換する。
         $record['state']['units'] = array();
-        foreach($this->units as $unit)
-            $record['state']['units'][ $unit->getNo() ] = $unit->getData();
+        if (is_array($this->units)) {
+            foreach($this->units as $unit)
+                $record['state']['units'][ $unit->getNo() ] = $unit->getData();
+        }
 
         // マップデータを structure, mats, maptips, ornaments キーに変換する。
         $record['state']['structure'] = $this->map->getStructure();
